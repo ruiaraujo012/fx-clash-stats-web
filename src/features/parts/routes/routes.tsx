@@ -2,7 +2,6 @@ import { lazyImport } from '@/utils/lazyImport';
 import type { RouteObject } from 'react-router-dom';
 
 const { PartsListPage } = lazyImport(() => import('./pages'), 'PartsListPage');
-// const GameDetailsPage = lazy(() => import('./GameDetailsPage'));
 
 const partsRoutes: RouteObject[] = [
   {
