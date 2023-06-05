@@ -1,9 +1,7 @@
 /* eslint-disable sort-keys */
-import _cloneDeep from 'lodash.clonedeep';
-import _set from 'lodash.set';
 
-import { calculatePartAvgAndPercentage, calculatePartUpgrade, calculatePartWeightedScore } from './utils';
 import { createFile } from '../utils';
+import { preparePartData } from './utils';
 import type { Part } from './types';
 
 const BRAKES: Part[] = [
@@ -602,38 +600,9 @@ const BRAKES: Part[] = [
 ] as Part[];
 
 const createBrakes = () => {
-  const brakesToSave = _cloneDeep(BRAKES);
+  const brakesToSave = preparePartData(BRAKES);
 
-  const allBrakesStatsAvgAndPercentage = calculatePartAvgAndPercentage(BRAKES);
-
-  let maxBrakeWeight = 0;
-
-  brakesToSave.forEach((brake) => {
-    brake.stats.forEach((stat) => {
-      const brakeWeight = calculatePartWeightedScore(allBrakesStatsAvgAndPercentage, stat);
-
-      if (brakeWeight > maxBrakeWeight) {
-        maxBrakeWeight = brakeWeight;
-      }
-
-      const upgrade = calculatePartUpgrade(brake, stat);
-
-      _set(stat, 'score.weighted', brakeWeight);
-      _set(stat, 'upgrade', upgrade);
-    });
-  });
-
-  brakesToSave.forEach((brake) => {
-    brake.stats.forEach((stat) => {
-      const percentageMaxScore = stat.score.weighted / maxBrakeWeight;
-
-      _set(stat, 'score.percentageToMax', percentageMaxScore);
-    });
-  });
-
-  console.log('brakesToSave[0] >> ', brakesToSave[1].stats);
-
-  console.log('Creating Brakes file >>');
+  console.log('Creating brakes file >>');
   createFile('src/features/parts/constants/brakes.json', brakesToSave);
 };
 
