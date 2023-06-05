@@ -22,7 +22,7 @@ export interface Stat {
 export interface Part {
   id: number;
   name: string;
-  rarity: 'common' | 'rare' | 'epic' | 'stock';
+  rarity: 'stock' | 'common' | 'rare' | 'epic';
   series: number;
   stats: Stat[];
 }

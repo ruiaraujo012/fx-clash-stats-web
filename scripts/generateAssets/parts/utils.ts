@@ -1,3 +1,6 @@
+import _cloneDeep from 'lodash.clonedeep';
+import _set from 'lodash.set';
+
 import { CARDS_NEEDED, RARITY_COINS_COST } from '../utils';
 import type { Part, Stat, Upgrade } from './types';
 
@@ -85,4 +88,37 @@ export const calculatePartWeightedScore = (
   const weightedScore = speedWeightedScore + corneringWeightedScore + powerUnitWeightedScore + reliabilityWeightedScore;
 
   return weightedScore;
+};
+
+export const preparePartData = (parts: Part[]) => {
+  const partsToSave = _cloneDeep(parts);
+
+  const allPartsStatsAvgAndPercentage = calculatePartAvgAndPercentage(parts);
+
+  let maxPartWeight = 0;
+
+  partsToSave.forEach((part) => {
+    part.stats.forEach((stat) => {
+      const partWeight = calculatePartWeightedScore(allPartsStatsAvgAndPercentage, stat);
+
+      if (partWeight > maxPartWeight) {
+        maxPartWeight = partWeight;
+      }
+
+      const upgrade = calculatePartUpgrade(part, stat);
+
+      _set(stat, 'score.weighted', partWeight);
+      _set(stat, 'upgrade', upgrade);
+    });
+  });
+
+  partsToSave.forEach((part) => {
+    part.stats.forEach((stat) => {
+      const percentageMaxScore = stat.score.weighted / maxPartWeight;
+
+      _set(stat, 'score.percentageToMax', percentageMaxScore);
+    });
+  });
+
+  return partsToSave;
 };
