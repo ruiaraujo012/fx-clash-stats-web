@@ -4,7 +4,7 @@ import _set from 'lodash.set';
 import { CARDS_NEEDED, RARITY_COINS_COST } from '../utils';
 import type { Part, Stat, Upgrade } from './types';
 
-export const calculatePartUpgrade = (part: Part, stat: Stat): Upgrade => {
+const calculatePartUpgrade = (part: Part, stat: Stat): Upgrade => {
   if (part.rarity === 'stock') {
     return {
       cards: 0,
@@ -37,7 +37,7 @@ const calculatePercentageToSelectedPartStat = (
   return selectedPartStatAvgPercentage;
 };
 
-export const calculatePartAvgAndPercentage = (parts: Part[]) => {
+const calculatePartAvgAndPercentage = (parts: Part[]) => {
   const calcSum = (statName: keyof Omit<Stat, 'upgrade' | 'score' | 'level'>) =>
     parts.reduce((acc, part) => acc + part.stats.reduce((acc2, stat) => acc2 + stat[statName], 0), 0);
 
@@ -75,7 +75,7 @@ export const calculatePartAvgAndPercentage = (parts: Part[]) => {
   return partAvgAndPercentage;
 };
 
-export const calculatePartWeightedScore = (
+const calculatePartWeightedScore = (
   partStatsAvg: Omit<Stat, 'upgrade' | 'score' | 'level'> & { percentage: Omit<Stat, 'upgrade' | 'score' | 'level'> },
   partStats: Omit<Stat, 'upgrade' | 'score' | 'level'>,
 ) => {

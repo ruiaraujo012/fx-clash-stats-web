@@ -1,4 +1,5 @@
 import createBrakes from './parts/brakes';
+import createDrivers from './drivers/drivers';
 import createEngines from './parts/engines';
 import createFrontWings from './parts/frontWings';
 import createGearboxes from './parts/gearboxes';
@@ -11,3 +12,5 @@ createRearWings();
 createFrontWings();
 createSuspensions();
 createEngines();
+
+createDrivers();
