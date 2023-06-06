@@ -10,9 +10,11 @@
     "generate-assets": "ts-node scripts/generateAssets/index.ts"
   },
   "dependencies": {
+    "iconsax-react": "^0.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
+    "tailwind-merge": "^1.13.0",
     "zustand": "^4.3.8"
   },
   "devDependencies": {

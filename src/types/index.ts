@@ -1,7 +1,6 @@
-type Rarity = 'stock' | 'common' | 'rare' | 'epic';
+import { Part } from '@/features/parts/types';
 
-export interface AssetDetails {
-  name: string;
-  series: number;
-  rarity: Rarity;
-}
+export type Rarity = 'common' | 'rare' | 'epic' | 'stock';
+
+// TODO: Remove
+export type Driver = Part;

@@ -1,4 +1,4 @@
-import { HomeLayout } from '@/components/layouts';
+import { HomeLayout } from '@/layouts';
 import { Navigate, type RouteObject } from 'react-router-dom';
 import { partsRoutes } from '@/features/parts';
 import ErrorPage from '@/components/ErrorPage';
