@@ -1,5 +1,6 @@
 import { ArrowUp } from 'iconsax-react';
 import { Card } from '@/components/ui/Card';
+import { useTranslation } from 'react-i18next';
 import IconsaxIcon from '@/lib/IconsaxIcon';
 import RarityBadge from '@/components/RarityBadge';
 import blueColor from '@/assets/blue-color.jpg';
@@ -24,6 +25,8 @@ interface Props {
 const AssetCard = (props: Props) => {
   const { asset, isUpgradable = false } = props;
 
+  const { t } = useTranslation();
+
   return (
     <Card key={asset.id}>
       <img
@@ -42,15 +45,13 @@ const AssetCard = (props: Props) => {
                 Icon={ArrowUp}
                 size={15}
               />
-              {/* TODO: i18next */}
-              Upgradable
+              {t('upgradable')}
             </span>
           )}
         </div>
 
         <div className='flex flex-row justify-between items-center mb-3'>
-          {/* TODO: i18next */}
-          <p className='font-normal text-gray-700 dark:text-gray-400'>Series {asset.series}</p>
+          <p className='font-normal text-gray-700 dark:text-gray-400'>{t('series', { series: asset.series })}</p>
 
           <RarityBadge rarity={asset.rarity} />
         </div>
