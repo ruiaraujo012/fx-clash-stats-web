@@ -14,8 +14,6 @@ const PartsPage = () => {
             {brakes.map((brake) => (
               <AssetCard
                 asset={brake}
-                // FIXME:
-                isUpgradable={brake.series === 1}
                 key={brake.id}
               />
             ))}
