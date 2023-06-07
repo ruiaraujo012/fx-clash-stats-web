@@ -1,4 +1,6 @@
 {
+  "boost": "Boost",
+  "boostPercentage": "Boost of {{boost}}%",
   "common": "Common",
   "epic": "Epic",
   "rare": "Rare",

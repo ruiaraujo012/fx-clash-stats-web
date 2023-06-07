@@ -1,39 +1,46 @@
 import { ArrowUp } from 'iconsax-react';
 import { Card } from '@/components/ui/Card';
+import { twMerge } from 'tailwind-merge';
 import { useTranslation } from 'react-i18next';
+import BoostBadge from '@/components/BoostBadge';
 import IconsaxIcon from '@/lib/IconsaxIcon';
 import RarityBadge from '@/components/RarityBadge';
-import blueColor from '@/assets/blue-color.jpg';
-import fuchsiaColor from '@/assets/fuchsia-color.jpg';
-import greyColor from '@/assets/grey-color.jpg';
-import orangeColor from '@/assets/orange-color.jpg';
 import type { Driver, Rarity } from '@/types';
 import type { Part } from '../features/parts/types';
 
-const imageColor: { [key in Rarity]: string } = {
-  common: blueColor,
-  epic: fuchsiaColor,
-  rare: orangeColor,
-  stock: greyColor,
+const backgroundColor: { [key in Rarity]: string } = {
+  common: 'bg-blue-100 dark:bg-blue-900',
+  epic: 'bg-fuchsia-100 dark:bg-fuchsia-900',
+  rare: 'bg-orange-100 dark:bg-orange-900',
+  stock: 'bg-gray-100 dark:bg-gray-900',
 };
 
 interface Props {
   asset: Part | Driver;
-  isUpgradable?: boolean;
 }
 
 const AssetCard = (props: Props) => {
-  const { asset, isUpgradable = false } = props;
+  const { asset } = props;
 
   const { t } = useTranslation();
 
+  // FIXME:
+  const boost = 10;
+  const isUpgradable = asset.series === 1;
+  const hasBoost = asset.series === 2;
+
   return (
-    <Card key={asset.id}>
-      <img
-        alt={asset.name}
-        className='h-52 lg:h-60 w-full'
-        src={imageColor[asset.rarity]}
-      />
+    <Card
+      cardClassName={hasBoost ? 'border-amber-500 dark:border-amber-500 border-2' : ''}
+      key={asset.id}
+    >
+      <div className={twMerge('relative h-52 lg:h-60 w-[40em]', backgroundColor[asset.rarity])}>
+        {hasBoost && (
+          <div className='absolute top-1 left-2'>
+            <BoostBadge boost={boost} />
+          </div>
+        )}
+      </div>
 
       <div className='p-3'>
         <div className='flex flex-row justify-between items-center mb-2'>
