@@ -1,4 +1,6 @@
 {
+  "boost": "Impulso",
+  "boostPercentage": "Impulso de {{boost}}%",
   "common": "Comum",
   "epic": "Épico",
   "rare": "Raro",
