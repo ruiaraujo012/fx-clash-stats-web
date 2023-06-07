@@ -30,6 +30,7 @@ export default defineConfig(({ mode }) => {
     define: {
       APP_ENVIRONMENT: JSON.stringify(mode),
       APP_VERSION: JSON.stringify(process.env.npm_package_version),
+      APP_VERSION_DATE: Date.now().toString(),
     },
     esbuild: {
       drop: mode !== 'development' ? ['console', 'debugger'] : [],
