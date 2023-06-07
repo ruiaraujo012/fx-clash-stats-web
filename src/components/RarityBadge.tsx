@@ -1,4 +1,6 @@
+import { normalizeKey } from '@/i18n/helpers';
 import { twMerge } from 'tailwind-merge';
+import { useTranslation } from 'react-i18next';
 import type { Rarity } from '@/types';
 
 const badgeColor: { [key in Rarity]: string } = {
@@ -15,10 +17,11 @@ interface Props {
 const RarityBadge = (props: Props) => {
   const { rarity } = props;
 
+  const { t } = useTranslation();
+
   return (
     <span className={twMerge('text-xs font-medium mr-2 px-2.5 py-0.5 rounded', badgeColor[rarity])}>
-      {/* TODO: i18next */}
-      {rarity}
+      {t(normalizeKey(rarity))}
     </span>
   );
 };

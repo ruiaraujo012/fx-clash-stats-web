@@ -1,8 +1,8 @@
-import enUSCommon from './locales/enUS/common.json';
-import enUSParts from './locales/enUS/parts.json';
+import enUSCommon from './locales/en-US/common.json';
+import enUSParts from './locales/en-US/parts.json';
 
-import ptPTCommon from './locales/ptPT/common.json';
-import ptPTParts from './locales/ptPT/parts.json';
+import ptPTCommon from './locales/pt-PT/common.json';
+import ptPTParts from './locales/pt-PT/parts.json';
 
 export const LANGUAGES = {
   EN_US: 'en-US',

@@ -1,16 +1,12 @@
-import { useTranslation } from 'react-i18next';
 import AssetCard from '@/components/AssetCard';
 import useBrakes from '../../hooks/useBrakes';
 
 const PartsPage = () => {
-  const { t } = useTranslation(['parts']);
-
   const brakes = useBrakes();
 
   return (
     <div>
       <h1>PartsPage</h1>
-      <p>{t('parts:brake', { count: 2 })}</p>
 
       <div className='flex justify-center w-full'>
         <div className='max-w-screen-2xl'>
