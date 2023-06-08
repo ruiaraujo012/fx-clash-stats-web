@@ -10,7 +10,7 @@ const PartsPage = () => {
 
       <div className='flex justify-center w-full'>
         <div className='max-w-screen-2xl'>
-          <div className='grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-4 gap-5'>
+          <div className='grid max-sm:grid-cols-1 max-xl:grid-cols-2 grid-cols-4 gap-5'>
             {brakes.map((brake) => (
               <AssetCard
                 asset={brake}
