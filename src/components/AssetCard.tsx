@@ -2,11 +2,11 @@ import { ArrowUp } from 'iconsax-react';
 import { Card } from '@/components/ui/Card';
 import { twMerge } from 'tailwind-merge';
 import { useTranslation } from 'react-i18next';
+import AssetLevelAndCollectedCards from '@/components/AssetLevelAndCollectedCards';
 import BoostBadge from '@/components/BoostBadge';
 import IconsaxIcon from '@/lib/IconsaxIcon';
 import RarityBadge from '@/components/RarityBadge';
-import type { Driver, Rarity } from '@/types';
-import type { Part } from '../features/parts/types';
+import type { Asset, Rarity } from '@/types';
 
 const backgroundColor: { [key in Rarity]: string } = {
   common: 'bg-blue-100 dark:bg-blue-900',
@@ -16,7 +16,7 @@ const backgroundColor: { [key in Rarity]: string } = {
 };
 
 interface Props {
-  asset: Part | Driver;
+  asset: Asset;
 }
 
 const AssetCard = (props: Props) => {
@@ -34,9 +34,9 @@ const AssetCard = (props: Props) => {
       cardClassName={hasBoost ? 'border-amber-500 dark:border-amber-500 border-2' : ''}
       key={asset.id}
     >
-      <div className={twMerge('relative h-52 lg:h-60 w-[40em]', backgroundColor[asset.rarity])}>
+      <div className={twMerge('h-52 lg:h-60 w-full', backgroundColor[asset.rarity])}>
         {hasBoost && (
-          <div className='absolute top-1 left-2'>
+          <div className='flex flex-row justify-end p-2'>
             <BoostBadge boost={boost} />
           </div>
         )}
@@ -62,6 +62,13 @@ const AssetCard = (props: Props) => {
 
           <RarityBadge rarity={asset.rarity} />
         </div>
+
+        <hr className='h-px my-2 bg-gray-200 border-0 dark:bg-gray-700' />
+
+        <AssetLevelAndCollectedCards
+          asset={asset}
+          assetType='brake'
+        />
       </div>
     </Card>
   );

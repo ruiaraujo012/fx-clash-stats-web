@@ -1,8 +1,10 @@
 {
   "boost": "Impulso",
   "boostPercentage": "Impulso de {{boost}}%",
+  "cards": "Cartas",
   "common": "Comum",
   "epic": "Épico",
+  "level": "Nível",
   "rare": "Raro",
   "series": "Serie {{series}}",
   "stock": "Inicial",
