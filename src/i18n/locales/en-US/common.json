@@ -1,8 +1,10 @@
 {
   "boost": "Boost",
   "boostPercentage": "Boost of {{boost}}%",
+  "cards": "Cards",
   "common": "Common",
   "epic": "Epic",
+  "level": "Level",
   "rare": "Rare",
   "series": "Serie {{series}}",
   "stock": "Stock",
