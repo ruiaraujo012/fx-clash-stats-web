@@ -12,6 +12,7 @@
     "generate-assets": "ts-node scripts/generateAssets/index.ts"
   },
   "dependencies": {
+    "fuse.js": "^6.6.2",
     "i18next": "^22.5.1",
     "i18next-browser-languagedetector": "^7.0.2",
     "iconsax-react": "^0.0.8",

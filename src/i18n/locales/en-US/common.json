@@ -5,7 +5,9 @@
   "common": "Common",
   "epic": "Epic",
   "level": "Level",
+  "noResultsFor": "No results for: {{search}}",
   "rare": "Rare",
+  "search": "Search",
   "series": "Serie {{series}}",
   "stock": "Stock",
   "upgradable": "Upgradable"
