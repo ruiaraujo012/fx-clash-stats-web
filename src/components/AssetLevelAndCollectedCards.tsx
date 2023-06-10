@@ -2,19 +2,28 @@ import { Add, Minus } from 'iconsax-react';
 import { twMerge } from 'tailwind-merge';
 import { useTranslation } from 'react-i18next';
 import IconsaxIcon from '@/lib/IconsaxIcon';
+import useCollectedAssetsStore from '@/store/collectedAssetsStore';
 import type { Asset } from '@/types';
-
-type AssetType = 'driver' | 'brake' | 'engine' | 'frontWing' | 'gearbox' | 'rearWing' | 'suspension';
+import type { CollectedAssetsKeys } from '@/store/collectedAssetsStore';
 
 interface Props {
   asset: Asset;
-  assetType: AssetType;
+  assetKey: CollectedAssetsKeys;
 }
 
 const AssetLevelAndCollectedCards = (props: Props) => {
-  const { asset, assetType } = props;
+  const { asset, assetKey } = props;
 
   const { t } = useTranslation();
+
+  const {
+    decreaseCollectedAssetCards,
+    increaseCollectedAssetCards,
+    updateCollectedAssetLevel,
+    updateCollectedAssetCards,
+    ...collectedData
+  } = useCollectedAssetsStore();
+  const selectedAssetCollectedData = collectedData[assetKey][asset.id];
 
   const isStock = asset.rarity === 'stock';
 
@@ -42,6 +51,9 @@ const AssetLevelAndCollectedCards = (props: Props) => {
       break;
   }
 
+  /**
+   * Render
+   */
   return (
     <div className='flex flex-row justify-between gap-5'>
       <div className='w-1/3'>
@@ -59,6 +71,8 @@ const AssetLevelAndCollectedCards = (props: Props) => {
           )}
           disabled={isStock}
           id='level'
+          onChange={(e) => updateCollectedAssetLevel(assetKey, asset.id, parseInt(e.target.value, 10))}
+          value={selectedAssetCollectedData?.level ?? 0}
         >
           {isStock ? (
             <option value={1}>1</option>
@@ -91,6 +105,7 @@ const AssetLevelAndCollectedCards = (props: Props) => {
               isStock ? 'cursor-not-allowed bg-blue-400 dark:bg-blue-500 hover:bg-blue-400 hover:dark:bg-blue-500' : '',
             )}
             disabled={isStock}
+            onClick={() => decreaseCollectedAssetCards(assetKey, asset.id)}
             type='button'
           >
             <IconsaxIcon
@@ -108,7 +123,15 @@ const AssetLevelAndCollectedCards = (props: Props) => {
             )}
             disabled={isStock}
             id='cards'
+            onChange={(e) =>
+              updateCollectedAssetCards(
+                assetKey,
+                asset.id,
+                Number.isNaN(e.target.valueAsNumber) ? 0 : e.target.valueAsNumber,
+              )
+            }
             type='number'
+            value={selectedAssetCollectedData?.cards ?? 0}
           />
 
           <button
@@ -117,6 +140,7 @@ const AssetLevelAndCollectedCards = (props: Props) => {
               isStock ? 'cursor-not-allowed bg-blue-400 dark:bg-blue-500 hover:bg-blue-400 hover:dark:bg-blue-500' : '',
             )}
             disabled={isStock}
+            onClick={() => increaseCollectedAssetCards(assetKey, asset.id)}
             type='button'
           >
             <IconsaxIcon

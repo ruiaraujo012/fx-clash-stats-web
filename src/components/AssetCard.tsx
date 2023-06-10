@@ -67,7 +67,7 @@ const AssetCard = (props: Props) => {
 
         <AssetLevelAndCollectedCards
           asset={asset}
-          assetType='brake'
+          assetKey='brakes'
         />
       </div>
     </Card>
