@@ -1,4 +1,4 @@
-import { Rarity } from '@/types';
+import { AssetCollectedData, Rarity, Upgrade } from '@/types';
 
 export interface Part {
   id: number;
@@ -22,9 +22,4 @@ export interface Stat {
 export interface Score {
   weighted: number;
   percentageToMax: number;
-}
-
-export interface Upgrade {
-  cards: number;
-  coins: number;
 }
