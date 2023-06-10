@@ -8,7 +8,7 @@ export const HomeLayout = () => (
   <div className='flex flex-col'>
     <NavBar />
 
-    <div className='p-2 px-4'>
+    <div className='p-2 px-4 min-w-full'>
       <Outlet />
     </div>
   </div>

@@ -7,6 +7,7 @@ import BoostBadge from '@/components/BoostBadge';
 import IconsaxIcon from '@/lib/IconsaxIcon';
 import RarityBadge from '@/components/RarityBadge';
 import type { Asset, Rarity } from '@/types';
+import type { CollectedAssetsKeys } from '@/store/collectedAssetsStore';
 
 const backgroundColor: { [key in Rarity]: string } = {
   common: 'bg-blue-100 dark:bg-blue-900',
@@ -17,10 +18,11 @@ const backgroundColor: { [key in Rarity]: string } = {
 
 interface Props {
   asset: Asset;
+  assetKey: CollectedAssetsKeys;
 }
 
 const AssetCard = (props: Props) => {
-  const { asset } = props;
+  const { asset, assetKey } = props;
 
   const { t } = useTranslation();
 
@@ -29,7 +31,7 @@ const AssetCard = (props: Props) => {
   const hasBoost = asset.series === 2;
 
   // TODO: Calculate if asset can be upgradable or not (create a hook or a utility function to it)
-  const isUpgradable = asset.series === 1;
+  const isUpgradable = asset.series === 2 || asset.series === 3;
 
   return (
     <Card
@@ -69,7 +71,7 @@ const AssetCard = (props: Props) => {
 
         <AssetLevelAndCollectedCards
           asset={asset}
-          assetKey='brakes'
+          assetKey={assetKey}
         />
       </div>
     </Card>

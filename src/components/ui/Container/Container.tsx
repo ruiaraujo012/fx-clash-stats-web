@@ -1,4 +1,5 @@
 import { type ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 type MaxWidth = 'full' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
@@ -21,7 +22,7 @@ const Container = (props: Props) => {
 
   return (
     <div className='flex justify-center w-full'>
-      <div className={twMaxWidth[maxWidth]}>{children}</div>
+      <div className={twMerge('w-full', twMaxWidth[maxWidth])}>{children}</div>
     </div>
   );
 };
