@@ -24,10 +24,12 @@ const AssetCard = (props: Props) => {
 
   const { t } = useTranslation();
 
-  // FIXME:
+  // TODO: Create store to save boosted assets and respective boost value
   const boost = 10;
-  const isUpgradable = asset.series === 1;
   const hasBoost = asset.series === 2;
+
+  // TODO: Calculate if asset can be upgradable or not (create a hook or a utility function to it)
+  const isUpgradable = asset.series === 1;
 
   return (
     <Card
