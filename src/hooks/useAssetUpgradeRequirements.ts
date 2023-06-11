@@ -31,7 +31,7 @@ const useAssetUpgradeRequirements = (asset: Asset, assetKey: CollectedAssetsKeys
     return { cardsNeeded, coinsNeeded, maxLevelAvailable, remainingCards };
   }, [asset.stats, cards, level]);
 
-  const isUpgradable = maxLevelAvailable > level;
+  const isUpgradable = maxLevelAvailable > level && level !== 0;
 
   return {
     cardsNeeded,

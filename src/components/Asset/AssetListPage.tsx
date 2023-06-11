@@ -4,19 +4,26 @@ import { Container } from '@/components/ui/Container';
 import { Heading4 } from '@/components/ui/Heading';
 import { useTranslation } from 'react-i18next';
 import useAssetsFuseSearch from '@/hooks/useAssetsFuseSearch';
-import useBrakes from '../../hooks/useBrakes';
+import type { Asset } from '@/types';
+import type { CollectedAssetsKeys } from '@/store/collectedAssetsStore';
 
-const PartsPage = () => {
-  const brakes = useBrakes();
+interface Props {
+  assets: Asset[];
+  assetKey: CollectedAssetsKeys;
+  title: string;
+}
 
-  const { t } = useTranslation(['common', 'parts']);
+const AssetListPage = (props: Props) => {
+  const { assets, assetKey, title } = props;
 
-  const { filteredAssets, setSearch, search } = useAssetsFuseSearch(brakes);
+  const { t } = useTranslation();
+
+  const { filteredAssets, setSearch, search } = useAssetsFuseSearch(assets);
 
   return (
     <Container maxWidth='2xl'>
       <AssetHeadingContainer>
-        <Heading4 className='m-0'>{t('parts:brake', { count: 2 })}</Heading4>
+        <Heading4 className='m-0'>{title}</Heading4>
 
         <AssetsFuseSearch onChangeSearch={setSearch} />
       </AssetHeadingContainer>
@@ -28,7 +35,7 @@ const PartsPage = () => {
           {filteredAssets.map((brake) => (
             <AssetCard
               asset={brake}
-              assetKey='brakes'
+              assetKey={assetKey}
               key={brake.id}
             />
           ))}
@@ -38,4 +45,4 @@ const PartsPage = () => {
   );
 };
 
-export default PartsPage;
+export default AssetListPage;
