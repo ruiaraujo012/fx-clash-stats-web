@@ -4,7 +4,7 @@ interface Props {
   boost: number;
 }
 
-const BoostBadge = (props: Props) => {
+const AssetBoostBadge = (props: Props) => {
   const { boost } = props;
 
   const { t } = useTranslation();
@@ -16,4 +16,4 @@ const BoostBadge = (props: Props) => {
   );
 };
 
-export default BoostBadge;
+export default AssetBoostBadge;

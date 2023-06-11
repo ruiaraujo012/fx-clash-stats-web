@@ -1,11 +1,8 @@
 import { Alert } from '@/components/ui/Alert';
+import { AssetCard, AssetHeadingContainer, AssetsFuseSearch, AssetsGrid } from '@/components/Asset';
 import { Container } from '@/components/ui/Container';
 import { Heading4 } from '@/components/ui/Heading';
 import { useTranslation } from 'react-i18next';
-import AssetCard from '@/components/AssetCard';
-import AssetHeadingContainer from '@/components/AssetHeadingContainer';
-import AssetsFuseSearch from '@/components/AssetsFuseSearch';
-import AssetsGrid from '@/components/AssetsGrid';
 import useAssetsFuseSearch from '@/hooks/useAssetsFuseSearch';
 import useBrakes from '../../hooks/useBrakes';
 

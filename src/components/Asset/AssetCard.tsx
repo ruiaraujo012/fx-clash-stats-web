@@ -1,11 +1,11 @@
 import { ArrowUp } from 'iconsax-react';
+import { AssetBoostBadge, AssetLevelAndCollectedCards, AssetUpgradeRequirements } from '@/components/Asset';
 import { Card } from '@/components/ui/Card';
 import { twMerge } from 'tailwind-merge';
 import { useTranslation } from 'react-i18next';
-import AssetLevelAndCollectedCards from '@/components/AssetLevelAndCollectedCards';
-import BoostBadge from '@/components/BoostBadge';
 import IconsaxIcon from '@/lib/IconsaxIcon';
 import RarityBadge from '@/components/RarityBadge';
+import useAssetUpgradeRequirements from '@/hooks/useAssetUpgradeRequirements';
 import type { Asset, Rarity } from '@/types';
 import type { CollectedAssetsKeys } from '@/store/collectedAssetsStore';
 
@@ -24,14 +24,13 @@ interface Props {
 const AssetCard = (props: Props) => {
   const { asset, assetKey } = props;
 
-  const { t } = useTranslation();
-
   // TODO: Create store to save boosted assets and respective boost value
   const boost = 10;
   const hasBoost = asset.series === 2;
 
-  // TODO: Calculate if asset can be upgradable or not (create a hook or a utility function to it)
-  const isUpgradable = asset.series === 2 || asset.series === 3;
+  const { t } = useTranslation();
+
+  const { coinsNeeded, isUpgradable, maxLevelAvailable, cardsNeeded } = useAssetUpgradeRequirements(asset, assetKey);
 
   return (
     <Card
@@ -41,7 +40,7 @@ const AssetCard = (props: Props) => {
       <div className={twMerge('h-52 lg:h-60 w-full', backgroundColor[asset.rarity])}>
         {hasBoost && (
           <div className='flex flex-row justify-end p-2'>
-            <BoostBadge boost={boost} />
+            <AssetBoostBadge boost={boost} />
           </div>
         )}
       </div>
@@ -66,6 +65,14 @@ const AssetCard = (props: Props) => {
 
           <RarityBadge rarity={asset.rarity} />
         </div>
+
+        <hr className='h-px my-2 bg-gray-200 border-0 dark:bg-gray-700' />
+
+        <AssetUpgradeRequirements
+          cardsNeeded={cardsNeeded}
+          coinsNeeded={coinsNeeded}
+          maxLevelAvailable={maxLevelAvailable}
+        />
 
         <hr className='h-px my-2 bg-gray-200 border-0 dark:bg-gray-700' />
 
