@@ -9,7 +9,7 @@ const commonRoutes: RouteObject[] = [
       ...partsRoutes,
       // TODO: Remove
       {
-        element: <Navigate to='/parts' />,
+        element: <Navigate to='/brakes' />,
         path: '',
       },
     ],
