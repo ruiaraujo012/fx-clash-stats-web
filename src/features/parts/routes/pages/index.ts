@@ -1,1 +1,1 @@
-export { default as PartsListPage } from './PartsListPage';
+export { default as BrakesListPage } from './BrakesListPage';

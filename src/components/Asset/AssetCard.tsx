@@ -25,6 +25,7 @@ const AssetCard = (props: Props) => {
   const { asset, assetKey } = props;
 
   // TODO: Create store to save boosted assets and respective boost value
+  // FIXME:
   const boost = 10;
   const hasBoost = asset.series === 2;
 

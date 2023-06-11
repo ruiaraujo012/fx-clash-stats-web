@@ -14,7 +14,7 @@ const AssetUpgradeRequirements = (props: Props) => {
   const { t } = useTranslation();
 
   return (
-    <div className='flex flex-row gap-2 divide-x justify-between'>
+    <div className='flex flex-row gap-2 divide-x justify-between divide-gray-200 dark:divide-gray-700'>
       <div className='flex w-1/3 justify-center'>
         <DefinitionItem term={t('maxLevelAvailable')}>{maxLevelAvailable}</DefinitionItem>
       </div>
