@@ -1,6 +1,8 @@
 {
   "brake_one": "Travão",
   "brake_other": "Travões",
+  "frontWing_one": "Asa dianteira",
+  "frontWing_other": "Asas dianteira",
   "gearbox_one": "Caixa de velocidade",
   "gearbox_other": "Caixas de velocidade",
   "rearWing_one": "Asa traseira",
