@@ -1,13 +1,12 @@
-import { type ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
+import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-interface Props {
+interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   cardClassName?: string;
-  children: ReactNode | ReactNode[];
 }
 
 const Card = (props: Props) => {
-  const { children, cardClassName } = props;
+  const { children, cardClassName, ...other } = props;
 
   return (
     <div
@@ -15,6 +14,7 @@ const Card = (props: Props) => {
         'bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden',
         cardClassName,
       )}
+      {...other}
     >
       {children}
     </div>
