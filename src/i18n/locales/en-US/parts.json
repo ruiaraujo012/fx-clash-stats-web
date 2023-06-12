@@ -1,10 +1,14 @@
 {
   "brake_one": "Brake",
   "brake_other": "Brakes",
+  "engine_one": "Engine",
+  "engine_other": "Engines",
   "frontWing_one": "Front wing",
   "frontWing_other": "Front Wings",
   "gearbox_one": "Gearbox",
   "gearbox_other": "Gearboxes",
   "rearWing_one": "Rear wing",
-  "rearWing_other": "Rear Wings"
+  "rearWing_other": "Rear Wings",
+  "suspension_one": "Suspension",
+  "suspension_other": "Suspensions"
 }
