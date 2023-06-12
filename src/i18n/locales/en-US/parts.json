@@ -1,4 +1,6 @@
 {
   "brake_one": "Brake",
-  "brake_other": "Brakes"
+  "brake_other": "Brakes",
+  "gearbox_one": "Gearbox",
+  "gearbox_other": "Gearboxes"
 }
