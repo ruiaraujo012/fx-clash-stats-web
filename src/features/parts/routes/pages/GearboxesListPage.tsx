@@ -3,14 +3,14 @@ import AssetListPage from '@/components/Asset/AssetListPage';
 import useGearboxes from '../../hooks/useGearboxes';
 
 const GearboxesListPage = () => {
-  const brakes = useGearboxes();
+  const gearboxes = useGearboxes();
 
   const { t } = useTranslation(['parts']);
 
   return (
     <AssetListPage
-      assetKey='brakes'
-      assets={brakes}
+      assetKey='gearboxes'
+      assets={gearboxes}
       title={t('parts:gearbox', { count: 2 })}
     />
   );

@@ -2,5 +2,7 @@
   "brake_one": "Brake",
   "brake_other": "Brakes",
   "gearbox_one": "Gearbox",
-  "gearbox_other": "Gearboxes"
+  "gearbox_other": "Gearboxes",
+  "rearWing_one": "Rear wing",
+  "rearWing_other": "Rear Wings"
 }
