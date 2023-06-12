@@ -1,10 +1,14 @@
 {
   "brake_one": "Travão",
   "brake_other": "Travões",
+  "engine_one": "Motor",
+  "engine_other": "Motores",
   "frontWing_one": "Asa dianteira",
   "frontWing_other": "Asas dianteira",
   "gearbox_one": "Caixa de velocidade",
   "gearbox_other": "Caixas de velocidade",
   "rearWing_one": "Asa traseira",
-  "rearWing_other": "Asas traseira"
+  "rearWing_other": "Asas traseira",
+  "suspension_one": "Suspensão",
+  "suspension_other": "Suspensões"
 }
