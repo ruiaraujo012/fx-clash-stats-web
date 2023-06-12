@@ -1,6 +1,8 @@
 {
   "brake_one": "Brake",
   "brake_other": "Brakes",
+  "frontWing_one": "Front wing",
+  "frontWing_other": "Front Wings",
   "gearbox_one": "Gearbox",
   "gearbox_other": "Gearboxes",
   "rearWing_one": "Rear wing",
