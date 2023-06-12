@@ -4,6 +4,7 @@ import type { RouteObject } from 'react-router-dom';
 const { BrakesListPage } = lazyImport(() => import('./pages'), 'BrakesListPage');
 const { GearboxesListPage } = lazyImport(() => import('./pages'), 'GearboxesListPage');
 const { RearWingsListPage } = lazyImport(() => import('./pages'), 'RearWingsListPage');
+const { FrontWingsListPage } = lazyImport(() => import('./pages'), 'FrontWingsListPage');
 
 const partsRoutes: RouteObject[] = [
   {
@@ -32,6 +33,15 @@ const partsRoutes: RouteObject[] = [
       },
     ],
     path: 'rear-wings',
+  },
+  {
+    children: [
+      {
+        element: <FrontWingsListPage />,
+        index: true,
+      },
+    ],
+    path: 'front-wings',
   },
 ];
 
