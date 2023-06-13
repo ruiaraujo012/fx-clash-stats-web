@@ -1,7 +1,5 @@
-import { Alert } from '@/components/ui/Alert';
+import { Alert, Container, Heading4 } from '@/components/ui';
 import { AssetCard, AssetHeadingContainer, AssetsFuseSearch, AssetsGrid } from '@/components/Asset';
-import { Container } from '@/components/ui/Container';
-import { Heading4 } from '@/components/ui/Heading';
 import { useTranslation } from 'react-i18next';
 import useAssetsFuseSearch from '@/hooks/useAssetsFuseSearch';
 import type { Asset } from '@/types';
