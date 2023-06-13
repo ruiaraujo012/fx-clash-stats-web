@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import ToggleThemeMode from './ToggleThemeMode';
+import GitHubButton from './GitHubButton';
+import ThemeModeButton from './ThemeModeButton';
 import logo from '@/assets/logo.png';
 
 const NavBar = () => (
@@ -7,7 +8,7 @@ const NavBar = () => (
    * Render
    */
   <div className='flex flex-row justify-between items-center w-full'>
-    <div className='flex flex-row justify-start items-center w-full'>
+    <div>
       <Link to='/'>
         <img
           alt='logo'
@@ -17,7 +18,10 @@ const NavBar = () => (
       </Link>
     </div>
 
-    <ToggleThemeMode />
+    <div className='flex flex-row gap-2 mx-2'>
+      <GitHubButton />
+      <ThemeModeButton />
+    </div>
   </div>
 );
 
