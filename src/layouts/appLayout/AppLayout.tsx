@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import NavBar from './NavBar';
+import Sidebar from '@/layouts/appLayout/sidebar/Sidebar';
 import useThemeStore from '@/store/themeStore';
 
 export const AppLayout = () => {
@@ -23,8 +24,14 @@ export const AppLayout = () => {
     <div className='flex flex-col'>
       <NavBar />
 
-      <div className='p-2 px-4 min-w-full'>
-        <Outlet />
+      <div className='flex flex-row gap-2 min-h-[calc(100vh-theme(spacing.16))]'>
+        <div className='max-2xl:hidden w-64 min-h-full'>
+          <Sidebar />
+        </div>
+
+        <div className='min-2xl:w-[calc(98vw-theme(spacing.64))] w-full p-4 bg-gray-50 dark:bg-gray-950 rounded-ss-3xl max-2xl:rounded-se-2xl'>
+          <Outlet />
+        </div>
       </div>
     </div>
   );

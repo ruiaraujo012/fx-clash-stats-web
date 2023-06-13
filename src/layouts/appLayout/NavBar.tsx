@@ -7,12 +7,12 @@ const NavBar = () => (
   /**
    * Render
    */
-  <div className='flex flex-row justify-between items-center w-full'>
+  <div className='flex flex-row justify-between items-center w-full h-16'>
     <div>
       <Link to='/'>
         <img
           alt='logo'
-          className='h-16 w-16 object-cover'
+          className='h-14 w-14 object-cover'
           src={logo}
         />
       </Link>
