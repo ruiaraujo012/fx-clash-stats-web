@@ -1,6 +1,7 @@
 {
   "boost": "Impulso",
   "boostPercentage": "Impulso de {{boost}}%",
+  "calculator": "Calculadora",
   "cards": "Cartas",
   "cardsNeeded": "Cartas necessárias",
   "coinsNeeded": "Moedas necessárias",
@@ -12,8 +13,10 @@
   "maxLevelAvailable": "Nível máximo disponível",
   "noResultsFor": "Sem resultados: {{search}}",
   "rare": "Raro",
+  "reportIssue": "Informe um problema",
   "search": "Pesquisar",
   "series": "Serie {{series}}",
   "stock": "Inicial",
+  "supportMe": "Apoie-me",
   "upgradable": "Atualizável"
 }
