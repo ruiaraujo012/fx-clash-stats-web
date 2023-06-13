@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-// import { Search } from '@/features/parts';
 import ToggleThemeMode from './ToggleThemeMode';
 import logo from '@/assets/logo.png';
 
@@ -7,10 +6,7 @@ const NavBar = () => (
   /**
    * Render
    */
-  <div
-    className='flex flex-row justify-between items-center w-full'
-    style={{ gridArea: 'nav' }}
-  >
+  <div className='flex flex-row justify-between items-center w-full'>
     <div className='flex flex-row justify-start items-center w-full'>
       <Link to='/'>
         <img
@@ -19,8 +15,6 @@ const NavBar = () => (
           src={logo}
         />
       </Link>
-
-      {/* <Search /> */}
     </div>
 
     <ToggleThemeMode />
