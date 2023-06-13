@@ -1,10 +1,14 @@
+import { Moon, Sun1 } from 'iconsax-react';
 import { useEffect, useState } from 'react';
-import type { ChangeEvent } from 'react';
+import { useTranslation } from 'react-i18next';
+import IconsaxIcon from '@/lib/IconsaxIcon';
 
 type ThemeMode = 'dark' | 'light';
 const THEME_MODE_KEY = 'theme-mode';
 
 const ToggleThemeMode = () => {
+  const { t } = useTranslation();
+
   const [themeMode, setThemeMode] = useState<ThemeMode>('light');
 
   useEffect(() => {
@@ -25,20 +29,20 @@ const ToggleThemeMode = () => {
   /**
    * Methods
    */
-  const handleChangeThemeMode = (event: ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { checked },
-    } = event;
+  const handleClickChangeThemeMode = () => {
+    setThemeMode((currentMode) => {
+      if (currentMode === 'light') {
+        window.document.documentElement.classList.add('dark');
+        localStorage.setItem(THEME_MODE_KEY, 'dark');
 
-    setThemeMode(checked ? 'dark' : 'light');
+        return 'dark';
+      }
 
-    if (checked) {
-      window.document.documentElement.classList.add('dark');
-      localStorage.setItem(THEME_MODE_KEY, 'dark');
-    } else {
       window.document.documentElement.classList.remove('dark');
       localStorage.setItem(THEME_MODE_KEY, 'light');
-    }
+
+      return 'light';
+    });
   };
 
   /**
@@ -46,17 +50,23 @@ const ToggleThemeMode = () => {
    */
   return (
     <div className='flex flex-row justify-start items-center px-2 min-w-fit'>
-      <label className='relative inline-flex items-center cursor-pointer'>
-        <input
-          checked={themeMode === 'dark'}
-          className='sr-only peer'
-          onChange={handleChangeThemeMode}
-          type='checkbox'
-          value=''
-        />
-        <div className="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600" />
-        <span className='ml-3 text-sm font-medium text-gray-900 dark:text-gray-300'>Dark Mode</span>
-      </label>
+      <button
+        className='text-gray-500 hover:bg-gray-100 rounded-lg p-2.5 dark:text-gray-100 dark:hover:bg-gray-700'
+        onClick={handleClickChangeThemeMode}
+        type='button'
+      >
+        {themeMode === 'dark' ? (
+          <>
+            <IconsaxIcon Icon={Sun1} />
+            <span className='sr-only'>{t('darkMode')}</span>
+          </>
+        ) : (
+          <>
+            <IconsaxIcon Icon={Moon} />
+            <span className='sr-only'>{t('lightMode')}</span>
+          </>
+        )}
+      </button>
     </div>
   );
 };
