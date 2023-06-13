@@ -1,6 +1,7 @@
 {
   "boost": "Boost",
   "boostPercentage": "Boost of {{boost}}%",
+  "calculator": "Calculator",
   "cards": "Cards",
   "cardsNeeded": "Cards needed",
   "coinsNeeded": "Coins needed",
@@ -12,8 +13,10 @@
   "maxLevelAvailable": "Max level available",
   "noResultsFor": "No results for: {{search}}",
   "rare": "Rare",
+  "reportIssue": "Report an issue",
   "search": "Search",
   "series": "Serie {{series}}",
   "stock": "Stock",
+  "supportMe": "Support Me",
   "upgradable": "Upgradable"
 }
