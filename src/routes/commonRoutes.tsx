@@ -1,4 +1,4 @@
-import { HomeLayout } from '@/layouts';
+import { AppLayout } from '@/layouts';
 import { Navigate, type RouteObject } from 'react-router-dom';
 import { partsRoutes } from '@/features/parts';
 import ErrorPage from '@/components/ErrorPage';
@@ -13,7 +13,7 @@ const commonRoutes: RouteObject[] = [
         path: '',
       },
     ],
-    element: <HomeLayout />,
+    element: <AppLayout />,
     errorElement: <ErrorPage />,
     path: '/',
   },
