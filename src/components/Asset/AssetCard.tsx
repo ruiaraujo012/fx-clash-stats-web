@@ -1,6 +1,6 @@
 import { ArrowUp, ExportSquare } from 'iconsax-react';
 import { AssetBoostBadge, AssetLevelAndCollectedCards, AssetUpgradeRequirements } from '@/components/Asset';
-import { Card } from '@/components/ui/Card';
+import { Card } from '@/components/ui';
 import { twMerge } from 'tailwind-merge';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
