@@ -52,7 +52,6 @@ const AssetCard = (props: Props) => {
     <Card
       cardClassName={hasBoost ? 'border-amber-500 dark:border-amber-500 border-2' : ''}
       key={asset.id}
-      onClick={() => console.log('asset >> ', asset)}
     >
       <div className={twMerge('h-52 lg:h-60 w-full', backgroundColor[asset.rarity])}>
         {hasBoost && (

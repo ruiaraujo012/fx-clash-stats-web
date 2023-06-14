@@ -5,15 +5,21 @@ import SideBarItem from './SidebarItem';
 import SupportButton from './SupportButton';
 import SupportMeButton from './SupportMeButton';
 
-export interface SidebarItem {
+export interface SidebarRoute {
   name: string;
   path: string;
 }
 
-const Sidebar = () => {
+interface Props {
+  onClickRoute?: (route: SidebarRoute) => void;
+}
+
+const Sidebar = (props: Props) => {
+  const { onClickRoute } = props;
+
   const { t } = useTranslation(['common', 'parts']);
 
-  const sidebarItems: SidebarItem[] = useMemo(
+  const sidebarRoutes: SidebarRoute[] = useMemo(
     () => [
       {
         name: t('calculator'),
@@ -52,12 +58,13 @@ const Sidebar = () => {
   );
 
   return (
-    <div className='h-full w-full pl-2 flex flex-col justify-between'>
+    <div className='h-full w-full px-2 flex flex-col justify-between'>
       <ul className='space-y-1 font-medium'>
-        {sidebarItems.map((item) => (
+        {sidebarRoutes.map((route) => (
           <SideBarItem
-            item={item}
-            key={item.path}
+            item={route}
+            key={route.path}
+            onClickRoute={onClickRoute}
           />
         ))}
       </ul>
