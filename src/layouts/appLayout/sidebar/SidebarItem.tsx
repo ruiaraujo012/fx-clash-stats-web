@@ -2,14 +2,15 @@ import { Cd } from 'iconsax-react';
 import { NavLink } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
 import IconsaxIcon from '@/lib/IconsaxIcon';
-import type { SidebarItem } from '@/layouts/appLayout/sidebar/Sidebar';
+import type { SidebarRoute } from './Sidebar';
 
 interface Props {
-  item: SidebarItem;
+  item: SidebarRoute;
+  onClickRoute?: (route: SidebarRoute) => void;
 }
 
 const SideBarItem = (props: Props) => {
-  const { item } = props;
+  const { item, onClickRoute } = props;
 
   return (
     <li>
@@ -20,6 +21,7 @@ const SideBarItem = (props: Props) => {
             isActive ? 'text-blue-700 bg-blue-100 dark:bg-blue-700 hover:bg-blue-100 dark:hover:bg-blue-700' : '',
           )
         }
+        onClick={() => (onClickRoute ? onClickRoute(item) : null)}
         to={item.path}
       >
         <IconsaxIcon

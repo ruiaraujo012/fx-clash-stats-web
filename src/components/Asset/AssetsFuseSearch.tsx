@@ -12,7 +12,7 @@ const AssetsFuseSearch = (props: Props) => {
   const { t } = useTranslation(['common']);
 
   return (
-    <div className='w-full max-w-sm'>
+    <div className='w-full max-w-sm max-sm:max-w-full'>
       <label
         className='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white'
         htmlFor='search'
