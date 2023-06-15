@@ -1,25 +1,17 @@
-import { AssetCollectedData, Rarity, Upgrade } from '@/types';
+import { BaseStat, Rarity, Score, Upgrade } from '@/types';
 
 export interface Part {
   id: number;
   name: string;
   rarity: Rarity;
   series: number;
-  stats: Stat[];
+  stats: PartStat[];
 }
 
-export interface Stat {
-  level: number;
+export interface PartStat extends BaseStat {
   speed: number;
   cornering: number;
   powerUnit: number;
   reliability: number;
   pitStopTime: number;
-  score: Score;
-  upgrade: Upgrade;
-}
-
-export interface Score {
-  weighted: number;
-  percentageToMax: number;
 }

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import useCollectedAssetsStore from '@/store/collectedAssetsStore';
-import type { Asset } from '@/types';
+import type { Asset, BaseStat } from '@/types';
 import type { CollectedAssetsKeys } from '@/store/collectedAssetsStore';
 
 const useAssetUpgradeRequirements = (asset: Asset, assetKey: CollectedAssetsKeys) => {
@@ -8,7 +8,10 @@ const useAssetUpgradeRequirements = (asset: Asset, assetKey: CollectedAssetsKeys
   const { cards = 0, level = 0 } = selectedCollectedAsset ?? {};
 
   const { cardsNeeded, coinsNeeded, maxLevelAvailable, remainingCards } = useMemo(() => {
-    const upgradeRequirements = asset.stats.filter((stat) => stat.level > level).map((stat) => stat.upgrade);
+    // Only basic statistics matter here
+    const upgradeRequirements = (asset.stats as BaseStat[])
+      .filter((stat) => stat.level > level)
+      .map((stat) => stat.upgrade);
 
     let remainingCards = cards;
     let maxLevelAvailable = level;
