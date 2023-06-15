@@ -2,7 +2,7 @@ import type { AssetCollectedData } from '@/types';
 import type { AssetsCollectedStore } from '@/store/collectedAssetsStore';
 import type { StateCreator } from 'zustand';
 
-interface State {
+interface PartsCollectedState {
   brakes: AssetCollectedData;
   engines: AssetCollectedData;
   frontWings: AssetCollectedData;
@@ -11,16 +11,16 @@ interface State {
   suspensions: AssetCollectedData;
 }
 
-export type PartsKeys = keyof State;
+export type PartsCollectedKeys = keyof PartsCollectedState;
 
-// interface Actions {
-//   updateCollectedPart: (id: number, part: PartsKeys, data: Partial<CollectedData>) => void;
-// }
+export type PartsCollectedDataSlice = PartsCollectedState;
 
-// export type PartsDataSlice = State & Actions;
-export type PartsDataSlice = State;
-
-export const createPartsCollectedSlice: StateCreator<AssetsCollectedStore, [], [], PartsDataSlice> = () => ({
+export const createPartsCollectedSlice: StateCreator<
+  AssetsCollectedStore,
+  [['zustand/persist', unknown]],
+  [],
+  PartsCollectedDataSlice
+> = () => ({
   brakes: {},
   engines: {},
   frontWings: {},
