@@ -1,12 +1,17 @@
+import {
+  type DriversCollectedDataSlice,
+  type DriversCollectedKeys,
+  createDriversCollectedSlice,
+} from '@/features/drivers';
 import { create } from 'zustand';
 import { createPartsCollectedSlice } from '@/features/parts';
 import { mountStoreDevtool } from 'simple-zustand-devtools';
 import { persist } from 'zustand/middleware';
-import type { PartsDataSlice, PartsKeys } from '@/features/parts';
+import type { PartsCollectedDataSlice, PartsCollectedKeys } from '@/features/parts';
 
-export type CollectedAssetsKeys = PartsKeys;
+export type CollectedAssetsKeys = PartsCollectedKeys | DriversCollectedKeys;
 
-type AssetsCollectedState = PartsDataSlice;
+type AssetsCollectedState = PartsCollectedDataSlice & DriversCollectedDataSlice;
 
 type AssetsCollectedActions = {
   updateCollectedAssetLevel: (assetKey: CollectedAssetsKeys, id: number, level: number) => void;
@@ -21,6 +26,7 @@ const useCollectedAssetsStore = create<AssetsCollectedStore>()(
   persist(
     (...args) => ({
       ...createPartsCollectedSlice(...args),
+      ...createDriversCollectedSlice(...args),
       decreaseCollectedAssetCards: (assetKey, id) => {
         const [set] = args;
 

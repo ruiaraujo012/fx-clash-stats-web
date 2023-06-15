@@ -17,7 +17,7 @@ interface Props {
 const Sidebar = (props: Props) => {
   const { onClickRoute } = props;
 
-  const { t } = useTranslation(['common', 'parts']);
+  const { t } = useTranslation(['common', 'parts', 'drivers']);
 
   const sidebarRoutes: SidebarRoute[] = useMemo(
     () => [
@@ -25,10 +25,10 @@ const Sidebar = (props: Props) => {
         name: t('calculator'),
         path: '/',
       },
-      // {
-      //   name: t('drivers:driver', { count: 2 }),
-      //   path: '/drivers',
-      // },
+      {
+        name: t('drivers:driver', { count: 2 }),
+        path: '/drivers',
+      },
       {
         name: t('parts:brake', { count: 2 }),
         path: '/brakes',
