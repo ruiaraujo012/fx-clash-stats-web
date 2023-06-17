@@ -49,6 +49,7 @@ const useCollectedAssetsStore = create<AssetsCollectedStore>()(
 
         return set((state) => {
           const currentCollectedCards = state[assetKey][id]?.cards ?? 0;
+          const currentLevel = state[assetKey][id]?.level ?? 0;
 
           return {
             [assetKey]: {
@@ -56,6 +57,7 @@ const useCollectedAssetsStore = create<AssetsCollectedStore>()(
               [id]: {
                 ...state[assetKey][id],
                 cards: currentCollectedCards + 1,
+                level: currentLevel === 0 ? 1 : currentLevel,
               },
             },
           };
@@ -64,28 +66,45 @@ const useCollectedAssetsStore = create<AssetsCollectedStore>()(
       updateCollectedAssetCards: (assetKey, id, cards) => {
         const [set] = args;
 
-        return set((state) => ({
-          [assetKey]: {
-            ...state[assetKey],
-            [id]: {
-              ...state[assetKey][id],
-              cards,
+        return set((state) => {
+          const currentLevel = state[assetKey][id]?.level ?? 0;
+
+          return {
+            [assetKey]: {
+              ...state[assetKey],
+              [id]: {
+                ...state[assetKey][id],
+                cards,
+                level: currentLevel === 0 && cards > 0 ? 1 : currentLevel,
+              },
             },
-          },
-        }));
+          };
+        });
       },
       updateCollectedAssetLevel: (assetKey, id, level) => {
         const [set] = args;
 
-        return set((state) => ({
-          [assetKey]: {
-            ...state[assetKey],
-            [id]: {
+        return set((state) => {
+          const currentCards = state[assetKey][id]?.cards ?? 0;
+          let dataToSave;
+
+          if (level === 0 && currentCards === 0) {
+            dataToSave = undefined;
+          } else {
+            dataToSave = {
               ...state[assetKey][id],
+              cards: level === 0 ? 0 : currentCards,
               level,
+            };
+          }
+
+          return {
+            [assetKey]: {
+              ...state[assetKey],
+              [id]: dataToSave,
             },
-          },
-        }));
+          };
+        });
       },
     }),
     {
