@@ -1,14 +1,19 @@
 {
   "brake_one": "Travão",
   "brake_other": "Travões",
+  "cornering": "Curva",
   "engine_one": "Motor",
   "engine_other": "Motores",
   "frontWing_one": "Asa dianteira",
   "frontWing_other": "Asas dianteira",
   "gearbox_one": "Caixa de velocidade",
   "gearbox_other": "Caixas de velocidade",
+  "pitStopTime": "Tempo de pit stop",
+  "powerUnit": "Unidade de energia",
   "rearWing_one": "Asa traseira",
   "rearWing_other": "Asas traseira",
+  "reliability": "Confiabilidade",
+  "speed": "Velocidade",
   "suspension_one": "Suspensão",
   "suspension_other": "Suspensões"
 }

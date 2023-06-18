@@ -1,13 +1,14 @@
-import { AssetBoostBadge } from '@/components/Asset';
-import { Card } from '@/components/ui';
-import { ExportSquare } from 'iconsax-react';
+import { ArrowUp, ExportSquare } from 'iconsax-react';
+import { AssetBoostBadge, AssetLevelAndCollectedCards, AssetUpgradeRequirements } from '@/components/Asset';
+import { Card, Hr } from '@/components/ui';
 import { twMerge } from 'tailwind-merge';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import IconsaxIcon from '@/lib/IconsaxIcon';
 import RarityBadge from '@/components/RarityBadge';
+import useAssetUpgradeRequirements from '@/hooks/useAssetUpgradeRequirements';
 import type { Asset, Rarity } from '@/types';
-import type { ReactNode } from 'react';
+import type { CollectedAssetsKeys } from '@/store/collectedAssetsStore';
 
 const backgroundColor: { [key in Rarity]: string } = {
   common: 'bg-blue-100 dark:bg-blue-900',
@@ -18,14 +19,15 @@ const backgroundColor: { [key in Rarity]: string } = {
 
 interface Props {
   asset: Asset;
-  children?: ReactNode | ReactNode[];
+  assetKey: CollectedAssetsKeys;
 }
 
 const EditAssetCard = (props: Props) => {
-  const { asset, children } = props;
+  const { asset, assetKey } = props;
 
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { coinsNeeded, isUpgradable, maxLevelAvailable, cardsNeeded } = useAssetUpgradeRequirements(asset, assetKey);
 
   // TODO: Create store to save boosted assets and respective boost value
   // FIXME:
@@ -76,6 +78,16 @@ const EditAssetCard = (props: Props) => {
               />
             )}
           </button>
+
+          {isUpgradable && (
+            <span className='bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 flex flex-row items-center gap-1'>
+              <IconsaxIcon
+                Icon={ArrowUp}
+                size={15}
+              />
+              {t('upgradable')}
+            </span>
+          )}
         </div>
 
         <div className='flex flex-row justify-between items-center mb-3'>
@@ -84,7 +96,20 @@ const EditAssetCard = (props: Props) => {
           <RarityBadge rarity={asset.rarity} />
         </div>
 
-        {children}
+        <Hr />
+
+        <AssetUpgradeRequirements
+          cardsNeeded={cardsNeeded}
+          coinsNeeded={coinsNeeded}
+          maxLevelAvailable={maxLevelAvailable}
+        />
+
+        <Hr />
+
+        <AssetLevelAndCollectedCards
+          asset={asset}
+          assetKey={assetKey}
+        />
       </div>
     </Card>
   );
