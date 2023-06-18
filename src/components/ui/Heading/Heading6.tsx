@@ -3,7 +3,7 @@ import type { TFunctionDetailedResult } from 'i18next';
 
 interface Props {
   className?: string;
-  children: string | number | TFunctionDetailedResult;
+  children: string | string[] | number | TFunctionDetailedResult;
 }
 
 const Heading6 = (props: Props) => {
