@@ -24,7 +24,7 @@ export const AppLayout = () => {
     <div className='flex flex-col'>
       <NavBar />
 
-      <div className='flex flex-row min-h-[calc(100vh-theme(spacing.16))]'>
+      <div className='mt-16 flex flex-row min-h-[calc(100vh-theme(spacing.16))]'>
         <div className='max-2xl:hidden w-72 min-h-full'>
           <Sidebar />
         </div>
