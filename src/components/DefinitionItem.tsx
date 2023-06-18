@@ -11,7 +11,7 @@ const DefinitionItem = (props: Props) => {
   const { children, term, className } = props;
 
   return (
-    <dl className={twMerge('flex flex-col text-center', className)}>
+    <dl className={twMerge('flex flex-col', className)}>
       <div className='flex flex-col justify-center h-full'>
         <dt className='text-sm font-normal text-gray-600 dark:text-gray-400'>{term}</dt>
       </div>

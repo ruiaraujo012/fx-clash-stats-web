@@ -1,5 +1,5 @@
-import { Driver } from '@/features/drivers/types';
-import { Part } from '@/features/parts/types';
+import { Driver } from '@/features/drivers';
+import { Part } from '@/features/parts';
 
 export type Rarity = 'common' | 'rare' | 'epic' | 'stock';
 

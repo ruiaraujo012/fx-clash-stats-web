@@ -21,10 +21,46 @@ export const createPartsCollectedSlice: StateCreator<
   [],
   PartsCollectedDataSlice
 > = () => ({
-  brakes: {},
-  engines: {},
-  frontWings: {},
-  gearboxes: {},
-  rearWings: {},
-  suspensions: {},
+  brakes: {
+    // Starter
+    0: {
+      cards: 0,
+      level: 1,
+    },
+  },
+  engines: {
+    // Starter
+    0: {
+      cards: 0,
+      level: 1,
+    },
+  },
+  frontWings: {
+    // Starter
+    0: {
+      cards: 0,
+      level: 1,
+    },
+  },
+  gearboxes: {
+    // Starter
+    0: {
+      cards: 0,
+      level: 1,
+    },
+  },
+  rearWings: {
+    // Starter
+    0: {
+      cards: 0,
+      level: 1,
+    },
+  },
+  suspensions: {
+    // Starter
+    0: {
+      cards: 0,
+      level: 1,
+    },
+  },
 });

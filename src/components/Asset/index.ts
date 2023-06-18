@@ -1,5 +1,7 @@
 export { default as AssetBoostBadge } from './AssetBoostBadge';
+export { default as EditAssetCard } from './EditAssetCard';
 export { default as AssetCard } from './AssetCard';
+export { default as PartStat } from './PartStat';
 export { default as AssetHeadingContainer } from './AssetHeadingContainer';
 export { default as AssetLevelAndCollectedCards } from './AssetLevelAndCollectedCards';
 export { default as AssetUpgradeRequirements } from './AssetUpgradeRequirements';

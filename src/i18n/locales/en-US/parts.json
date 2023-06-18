@@ -1,14 +1,19 @@
 {
   "brake_one": "Brake",
   "brake_other": "Brakes",
+  "cornering": "Cornering",
   "engine_one": "Engine",
   "engine_other": "Engines",
   "frontWing_one": "Front wing",
   "frontWing_other": "Front Wings",
   "gearbox_one": "Gearbox",
   "gearbox_other": "Gearboxes",
+  "pitStopTime": "Pit stop time",
+  "powerUnit": "Power unit",
   "rearWing_one": "Rear wing",
   "rearWing_other": "Rear Wings",
+  "reliability": "Reliability",
+  "speed": "Speed",
   "suspension_one": "Suspension",
   "suspension_other": "Suspensions"
 }

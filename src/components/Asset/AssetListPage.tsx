@@ -1,5 +1,5 @@
 import { Alert, Container, Heading4 } from '@/components/ui';
-import { AssetCard, AssetHeadingContainer, AssetsFuseSearch, AssetsGrid } from '@/components/Asset';
+import { AssetHeadingContainer, AssetsFuseSearch, AssetsGrid, EditAssetCard } from '@/components/Asset';
 import { useTranslation } from 'react-i18next';
 import useAssetsFuseSearch from '@/hooks/useAssetsFuseSearch';
 import type { Asset } from '@/types';
@@ -31,7 +31,7 @@ const AssetListPage = (props: Props) => {
       ) : (
         <AssetsGrid>
           {filteredAssets.map((brake) => (
-            <AssetCard
+            <EditAssetCard
               asset={brake}
               assetKey={assetKey}
               key={brake.id}

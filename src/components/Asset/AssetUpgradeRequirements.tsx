@@ -16,15 +16,30 @@ const AssetUpgradeRequirements = (props: Props) => {
   return (
     <div className='flex flex-row gap-2 divide-x justify-between divide-gray-200 dark:divide-gray-700'>
       <div className='flex w-1/3 justify-center'>
-        <DefinitionItem term={t('maxLevelAvailable')}>{maxLevelAvailable}</DefinitionItem>
+        <DefinitionItem
+          className='text-center'
+          term={t('maxLevelAvailable')}
+        >
+          {maxLevelAvailable}
+        </DefinitionItem>
       </div>
 
       <div className='flex w-1/3 justify-center'>
-        <DefinitionItem term={t('cardsNeeded')}>{formatLongNumber(cardsNeeded)}</DefinitionItem>
+        <DefinitionItem
+          className='text-center'
+          term={t('cardsNeeded')}
+        >
+          {formatLongNumber(cardsNeeded)}
+        </DefinitionItem>
       </div>
 
       <div className='flex w-1/3 justify-center'>
-        <DefinitionItem term={t('coinsNeeded')}>{formatLongNumber(coinsNeeded)}</DefinitionItem>
+        <DefinitionItem
+          className='text-center'
+          term={t('coinsNeeded')}
+        >
+          {formatLongNumber(coinsNeeded)}
+        </DefinitionItem>
       </div>
     </div>
   );
