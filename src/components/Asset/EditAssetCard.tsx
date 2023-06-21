@@ -32,7 +32,8 @@ const EditAssetCard = (props: Props) => {
   // TODO: Create store to save boosted assets and respective boost value
   // FIXME:
   const boost = 10;
-  const hasBoost = asset.series === 2;
+  // const hasBoost = asset.series === 2;
+  const hasBoost = false;
 
   const isStock = asset.rarity === 'stock';
 
@@ -50,7 +51,7 @@ const EditAssetCard = (props: Props) => {
    */
   return (
     <Card
-      cardClassName={hasBoost ? 'border-amber-500 dark:border-amber-500 border-2' : ''}
+      className={hasBoost ? 'border-amber-500 dark:border-amber-500 border-2' : ''}
       key={asset.id}
     >
       <div className={twMerge('h-52 lg:h-60 w-full', backgroundColor[asset.rarity])}>
@@ -62,7 +63,7 @@ const EditAssetCard = (props: Props) => {
       </div>
 
       <div className='p-3'>
-        <div className='flex flex-row justify-between items-center mb-2'>
+        <div className='flex flex-row justify-between items-center mb-2 gap-2 flex-wrap'>
           <button
             className={twMerge(
               'flex flex-row items-center gap-2 text-gray-900 dark:text-white',

@@ -29,7 +29,7 @@ const MobileSidebar = (props: Props) => {
           isOpen ? '-translate-x-0' : '-translate-x-full',
         )}
       >
-        <div className='relative w-screen max-w-xs flex flex-col space-y-6 overflow-y-auto h-full'>
+        <div className='relative w-screen max-w-xs flex flex-col space-y-6 h-full'>
           <header className='p-4 flex flex-row justify-between items-center'>
             <Heading5 className='mb-0'>{t('menu')}</Heading5>
 

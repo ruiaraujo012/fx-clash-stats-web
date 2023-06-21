@@ -22,10 +22,7 @@ const useBestPart = (partData: Part[], partKey: PartsCollectedKeys) => {
     };
   });
 
-  const bestPart: BestPart = partsWithCurrentLevelScore.reduce(
-    (best, part) => (part.score > best.score ? part : best),
-    partsWithCurrentLevelScore[0],
-  );
+  const [bestPart] = partsWithCurrentLevelScore.sort((partA, partB) => (partA.score > partB.score ? -1 : 1));
 
   return bestPart;
 };

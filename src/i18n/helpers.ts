@@ -1,7 +1,9 @@
+import enUSCalculators from './locales/en-US/calculators.json';
 import enUSCommon from './locales/en-US/common.json';
 import enUSDrivers from './locales/en-US/drivers.json';
 import enUSParts from './locales/en-US/parts.json';
 
+import ptPTCalculators from './locales/pt-PT/calculators.json';
 import ptPTCommon from './locales/pt-PT/common.json';
 import ptPTDrivers from './locales/pt-PT/drivers.json';
 import ptPTParts from './locales/pt-PT/parts.json';
@@ -12,21 +14,24 @@ export const LANGUAGES = {
 } as const;
 
 export const NAMESPACES = {
+  CALCULATORS: 'calculators',
   COMMON: 'common',
   DRIVERS: 'drivers',
   PARTS: 'parts',
 } as const;
 
 export const PT_PT_RESOURCES = {
-  [NAMESPACES.PARTS]: ptPTParts,
+  [NAMESPACES.CALCULATORS]: ptPTCalculators,
   [NAMESPACES.COMMON]: ptPTCommon,
   [NAMESPACES.DRIVERS]: ptPTDrivers,
+  [NAMESPACES.PARTS]: ptPTParts,
 } as const;
 
 export const EN_US_RESOURCES = {
-  [NAMESPACES.PARTS]: enUSParts,
+  [NAMESPACES.CALCULATORS]: enUSCalculators,
   [NAMESPACES.COMMON]: enUSCommon,
   [NAMESPACES.DRIVERS]: enUSDrivers,
+  [NAMESPACES.PARTS]: enUSParts,
 } as const;
 
 export const languages = [LANGUAGES.EN_US, LANGUAGES.PT_PT] as const;

@@ -22,7 +22,7 @@ const calculatePartUpgrade = (part: Part, stat: Stat): Upgrade => {
 
 const calculatePercentageToSelectedPartStat = (
   selectedStatAvg: number,
-  eachStatAvg: Omit<Stat, 'upgrade' | 'score' | 'level'>,
+  eachStatAvg: Omit<Stat, 'upgrade' | 'score' | 'level' | 'statsSum'>,
 ): number => {
   const selectedPartStatAvgPercentage =
     (1 -
@@ -38,7 +38,7 @@ const calculatePercentageToSelectedPartStat = (
 };
 
 const calculatePartAvgAndPercentage = (parts: Part[]) => {
-  const calcSum = (statName: keyof Omit<Stat, 'upgrade' | 'score' | 'level'>) =>
+  const calcSum = (statName: keyof Omit<Stat, 'upgrade' | 'score' | 'level' | 'statsSum'>) =>
     parts.reduce((acc, part) => acc + part.stats.reduce((acc2, stat) => acc2 + stat[statName], 0), 0);
 
   const numberOfStats = parts.reduce((acc, part) => acc + part.stats.length, 0);
@@ -76,8 +76,10 @@ const calculatePartAvgAndPercentage = (parts: Part[]) => {
 };
 
 const calculatePartWeightedScore = (
-  partStatsAvg: Omit<Stat, 'upgrade' | 'score' | 'level'> & { percentage: Omit<Stat, 'upgrade' | 'score' | 'level'> },
-  partStats: Omit<Stat, 'upgrade' | 'score' | 'level'>,
+  partStatsAvg: Omit<Stat, 'upgrade' | 'score' | 'level' | 'statsSum'> & {
+    percentage: Omit<Stat, 'upgrade' | 'score' | 'level' | 'statsSum'>;
+  },
+  partStats: Omit<Stat, 'upgrade' | 'score' | 'level' | 'statsSum'>,
 ) => {
   const speedWeightedScore = partStatsAvg.percentage.speed * (partStats.speed - partStats.pitStopTime);
   const corneringWeightedScore = partStatsAvg.percentage.cornering * (partStats.cornering - partStats.pitStopTime);
@@ -88,6 +90,12 @@ const calculatePartWeightedScore = (
   const weightedScore = speedWeightedScore + corneringWeightedScore + powerUnitWeightedScore + reliabilityWeightedScore;
 
   return weightedScore;
+};
+
+const calculateStatsSum = (stat: Stat): number => {
+  const pitStopTimeCalc = (6 - stat.pitStopTime) / 2;
+
+  return stat.cornering + pitStopTimeCalc + stat.powerUnit + stat.reliability + stat.speed;
 };
 
 export const preparePartData = (parts: Part[]) => {
@@ -106,9 +114,11 @@ export const preparePartData = (parts: Part[]) => {
       }
 
       const upgrade = calculatePartUpgrade(part, stat);
+      const statsSum = calculateStatsSum(stat);
 
       _set(stat, 'score.weighted', partWeight);
       _set(stat, 'upgrade', upgrade);
+      _set(stat, 'statsSum', statsSum);
     });
   });
 

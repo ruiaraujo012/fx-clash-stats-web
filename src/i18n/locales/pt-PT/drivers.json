@@ -1,4 +1,9 @@
 {
+  "defending": "Defender",
   "driver_one": "Piloto",
-  "driver_other": "Pilotos"
+  "driver_other": "Pilotos",
+  "overtaking": "Ultrapassar",
+  "qualifying": "Qualificação",
+  "raceStart": "Iniciar corrida",
+  "tireManagement": "Gerir pneus"
 }

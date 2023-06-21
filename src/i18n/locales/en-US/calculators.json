@@ -1,0 +1,9 @@
+{
+  "bestTeam": "Best team",
+  "driver1": "Driver 1",
+  "driver2": "Driver 2",
+  "error": {
+    "twoDriverRequired": "You must have at least two drivers for the calculator to work."
+  },
+  "teamScore": "Team score"
+}

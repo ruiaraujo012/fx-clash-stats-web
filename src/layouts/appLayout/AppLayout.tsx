@@ -21,18 +21,18 @@ export const AppLayout = () => {
    * Render
    */
   return (
-    <div className='flex flex-col'>
+    <>
       <NavBar />
 
-      <div className='mt-16 flex flex-row min-h-[calc(100vh-theme(spacing.16))]'>
-        <div className='max-2xl:hidden w-72 min-h-full'>
+      <div className='flex min-h-screen'>
+        <div className='max-2xl:hidden'>
           <Sidebar />
         </div>
 
-        <div className='min-2xl:w-[calc(98vw-theme(spacing.72))] w-full p-4 bg-gray-50 dark:bg-gray-950 rounded-ss-3xl max-2xl:rounded-se-2xl'>
+        <div className='mt-16 p-3 flex-1 bg-gray-50 dark:bg-gray-950 rounded-ss-3xl max-xl:rounded-se-2xl'>
           <Outlet />
         </div>
       </div>
-    </div>
+    </>
   );
 };

@@ -1,13 +1,13 @@
-import { Hr } from '../ui';
+import { Hr } from '../../../../components/ui';
 import { useTranslation } from 'react-i18next';
 import DefinitionItem from '@/components/DefinitionItem';
-import type { PartStat as PartStatType } from '@/features/parts';
+import type { PartStat } from '@/features/parts';
 
 interface Props {
-  stat: PartStatType;
+  stat: PartStat;
 }
 
-const PartStat = (props: Props) => {
+const PartStats = (props: Props) => {
   const { stat } = props;
 
   const { t } = useTranslation(['parts']);
@@ -23,7 +23,7 @@ const PartStat = (props: Props) => {
             {stat.speed}
           </DefinitionItem>
         </div>
-        <div className='flex w-1/3 justify-center'>
+        <div className='flex w-1/3 justify-center pl-2'>
           <DefinitionItem
             className='text-center'
             term={t('parts:cornering')}
@@ -31,7 +31,7 @@ const PartStat = (props: Props) => {
             {stat.cornering}
           </DefinitionItem>
         </div>
-        <div className='flex w-1/3 justify-center'>
+        <div className='flex w-1/3 justify-center pl-2'>
           <DefinitionItem
             className='text-center'
             term={t('parts:powerUnit')}
@@ -52,7 +52,7 @@ const PartStat = (props: Props) => {
             {stat.reliability}
           </DefinitionItem>
         </div>
-        <div className='flex w-1/2 justify-center'>
+        <div className='flex w-1/2 justify-center pl-2'>
           <DefinitionItem
             className='text-center'
             term={t('parts:pitStopTime')}
@@ -65,4 +65,4 @@ const PartStat = (props: Props) => {
   );
 };
 
-export default PartStat;
+export default PartStats;

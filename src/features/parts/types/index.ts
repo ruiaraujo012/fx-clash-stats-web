@@ -1,4 +1,4 @@
-import { BaseStat, Rarity, Score, Upgrade } from '@/types';
+import { BaseStat, Rarity } from '@/types';
 
 export interface Part {
   id: number;
