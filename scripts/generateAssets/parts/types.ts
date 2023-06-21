@@ -17,6 +17,7 @@ export interface Stat {
   pitStopTime: number;
   score: Score;
   upgrade: Upgrade;
+  statsSum: number;
 }
 
 export interface Part {

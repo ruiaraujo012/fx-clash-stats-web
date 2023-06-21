@@ -7,7 +7,7 @@ const App = () => (
   /**
    * Render
    */
-  <div className='bg-white dark:bg-gray-800 min-h-screen'>
+  <div className='bg-white dark:bg-gray-800'>
     <AppProviders>
       <AppRoutes />
     </AppProviders>
