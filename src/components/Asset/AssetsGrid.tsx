@@ -7,7 +7,9 @@ interface Props {
 const AssetsGrid = (props: Props) => {
   const { children } = props;
 
-  return <div className='grid max-sm:grid-cols-1 max-2xl:grid-cols-3 grid-cols-4 gap-5'>{children}</div>;
+  return (
+    <div className='grid max-sm:grid-cols-1 max-lg:grid-cols-2 max-2xl:grid-cols-3 grid-cols-4 gap-5'>{children}</div>
+  );
 };
 
 export default AssetsGrid;

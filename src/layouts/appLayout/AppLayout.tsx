@@ -25,11 +25,11 @@ export const AppLayout = () => {
       <NavBar />
 
       <div className='flex min-h-screen'>
-        <div className='max-2xl:hidden'>
+        <div className='max-xl:hidden'>
           <Sidebar />
         </div>
 
-        <div className='mt-16 p-3 flex-1 bg-gray-50 dark:bg-gray-950 rounded-ss-3xl max-xl:rounded-se-2xl'>
+        <div className='mt-16 p-3 flex-1 bg-gray-50 dark:bg-gray-950 xl:rounded-ss-3xl'>
           <Outlet />
         </div>
       </div>
