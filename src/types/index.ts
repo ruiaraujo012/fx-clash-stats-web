@@ -28,4 +28,5 @@ export interface BaseStat {
   level: number;
   score: Score;
   upgrade: Upgrade;
+  statsSum: number;
 }

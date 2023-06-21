@@ -24,7 +24,7 @@ const AssetUpgradeRequirements = (props: Props) => {
         </DefinitionItem>
       </div>
 
-      <div className='flex w-1/3 justify-center'>
+      <div className='flex w-1/3 justify-center pl-2'>
         <DefinitionItem
           className='text-center'
           term={t('cardsNeeded')}
@@ -33,7 +33,7 @@ const AssetUpgradeRequirements = (props: Props) => {
         </DefinitionItem>
       </div>
 
-      <div className='flex w-1/3 justify-center'>
+      <div className='flex w-1/3 justify-center pl-2'>
         <DefinitionItem
           className='text-center'
           term={t('coinsNeeded')}

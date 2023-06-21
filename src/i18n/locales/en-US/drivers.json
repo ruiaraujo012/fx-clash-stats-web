@@ -1,4 +1,9 @@
 {
+  "defending": "Defending",
   "driver_one": "Driver",
-  "driver_other": "Drivers"
+  "driver_other": "Drivers",
+  "overtaking": "Overtaking",
+  "qualifying": "Qualifying",
+  "raceStart": "Race start",
+  "tireManagement": "Tire management"
 }

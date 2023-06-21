@@ -6,22 +6,15 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import IconsaxIcon from '@/lib/IconsaxIcon';
 import RarityBadge from '@/components/RarityBadge';
-import type { Asset, Rarity } from '@/types';
+import type { Asset } from '@/types';
 import type { ReactNode } from 'react';
-
-const backgroundColor: { [key in Rarity]: string } = {
-  common: 'bg-blue-100 dark:bg-blue-900',
-  epic: 'bg-fuchsia-100 dark:bg-fuchsia-900',
-  rare: 'bg-orange-100 dark:bg-orange-900',
-  stock: 'bg-gray-100 dark:bg-gray-900',
-};
 
 interface Props {
   asset: Asset;
   children?: ReactNode | ReactNode[];
 }
 
-const EditAssetCard = (props: Props) => {
+const BestAssetCard = (props: Props) => {
   const { asset, children } = props;
 
   const { t } = useTranslation();
@@ -30,7 +23,8 @@ const EditAssetCard = (props: Props) => {
   // TODO: Create store to save boosted assets and respective boost value
   // FIXME:
   const boost = 10;
-  const hasBoost = asset.series === 2;
+  // const hasBoost = asset.series === 1;
+  const hasBoost = false;
 
   const isStock = asset.rarity === 'stock';
 
@@ -48,19 +42,11 @@ const EditAssetCard = (props: Props) => {
    */
   return (
     <Card
-      cardClassName={hasBoost ? 'border-amber-500 dark:border-amber-500 border-2' : ''}
+      className={hasBoost ? 'border-amber-500 dark:border-amber-500 border-2' : ''}
       key={asset.id}
     >
-      <div className={twMerge('h-52 lg:h-60 w-full', backgroundColor[asset.rarity])}>
-        {hasBoost && (
-          <div className='flex flex-row justify-end p-2'>
-            <AssetBoostBadge boost={boost} />
-          </div>
-        )}
-      </div>
-
       <div className='p-3'>
-        <div className='flex flex-row justify-between items-center mb-2'>
+        <div className='flex flex-row justify-between items-center mb-2 gap-2 flex-wrap'>
           <button
             className={twMerge(
               'flex flex-row items-center gap-2 text-gray-900 dark:text-white',
@@ -76,6 +62,8 @@ const EditAssetCard = (props: Props) => {
               />
             )}
           </button>
+
+          {hasBoost && <AssetBoostBadge boost={boost} />}
         </div>
 
         <div className='flex flex-row justify-between items-center mb-3'>
@@ -90,4 +78,4 @@ const EditAssetCard = (props: Props) => {
   );
 };
 
-export default EditAssetCard;
+export default BestAssetCard;

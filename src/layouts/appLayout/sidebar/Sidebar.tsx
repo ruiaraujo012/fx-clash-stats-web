@@ -23,7 +23,7 @@ const Sidebar = (props: Props) => {
     () => [
       {
         name: t('calculator'),
-        path: '/',
+        path: '/calculator',
       },
       {
         name: t('drivers:driver', { count: 2 }),
@@ -58,23 +58,25 @@ const Sidebar = (props: Props) => {
   );
 
   return (
-    <div className='h-full w-full px-2 flex flex-col justify-between'>
-      <ul className='space-y-1 font-medium'>
-        {sidebarRoutes.map((route) => (
-          <SideBarItem
-            item={route}
-            key={route.path}
-            onClickRoute={onClickRoute}
-          />
-        ))}
-      </ul>
+    <aside className='sticky top-16 h-[calc(100vh-theme(spacing.16))] max-xl:w-80 w-60 overflow-y-auto pt-1 z-10'>
+      <div className='h-full w-full px-2 flex flex-col justify-between'>
+        <ul className='space-y-1 font-medium'>
+          {sidebarRoutes.map((route) => (
+            <SideBarItem
+              item={route}
+              key={route.path}
+              onClickRoute={onClickRoute}
+            />
+          ))}
+        </ul>
 
-      <div className='flex flex-col items-center gap-2 pb-2 w-full'>
-        <SupportButton />
-        <SupportMeButton />
-        <AppVersion />
+        <div className='flex flex-col items-center gap-2 pb-2 w-full'>
+          <SupportButton />
+          <SupportMeButton />
+          <AppVersion />
+        </div>
       </div>
-    </div>
+    </aside>
   );
 };
 

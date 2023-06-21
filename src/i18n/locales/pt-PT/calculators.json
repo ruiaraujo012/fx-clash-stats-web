@@ -1,0 +1,9 @@
+{
+  "bestTeam": "Melhor equipa",
+  "driver1": "Piloto 1",
+  "driver2": "Piloto 2",
+  "error": {
+    "twoDriverRequired": "Deve ter pelo menos dois pilotos para que a calculadora funcione."
+  },
+  "teamScore": "Pontuação da equipa"
+}
