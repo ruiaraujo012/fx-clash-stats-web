@@ -63,7 +63,7 @@ const EditAssetCard = (props: Props) => {
       </div>
 
       <div className='p-3'>
-        <div className='flex flex-row justify-between items-center mb-2 gap-2 flex-wrap'>
+        <div className='flex flex-col justify-between items-start mb-2 gap-2'>
           <button
             className={twMerge(
               'flex flex-row items-center gap-2 text-gray-900 dark:text-white',
@@ -80,7 +80,7 @@ const EditAssetCard = (props: Props) => {
             )}
           </button>
 
-          {isUpgradable && (
+          {isUpgradable ? (
             <span className='bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 flex flex-row items-center gap-1'>
               <IconsaxIcon
                 Icon={ArrowUp}
@@ -88,6 +88,8 @@ const EditAssetCard = (props: Props) => {
               />
               {t('upgradable')}
             </span>
+          ) : (
+            <span className='py-2.5' />
           )}
         </div>
 
