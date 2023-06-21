@@ -92,12 +92,6 @@ const calculatePartWeightedScore = (
   return weightedScore;
 };
 
-const calculateStatsSum = (stat: Stat): number => {
-  const pitStopTimeCalc = (6 - stat.pitStopTime) / 2;
-
-  return stat.cornering + pitStopTimeCalc + stat.powerUnit + stat.reliability + stat.speed;
-};
-
 export const preparePartData = (parts: Part[]) => {
   const partsToSave = _cloneDeep(parts);
 
@@ -114,11 +108,9 @@ export const preparePartData = (parts: Part[]) => {
       }
 
       const upgrade = calculatePartUpgrade(part, stat);
-      const statsSum = calculateStatsSum(stat);
 
       _set(stat, 'score.weighted', partWeight);
       _set(stat, 'upgrade', upgrade);
-      _set(stat, 'statsSum', statsSum);
     });
   });
 

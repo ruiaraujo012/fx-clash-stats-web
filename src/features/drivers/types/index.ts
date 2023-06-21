@@ -14,4 +14,5 @@ export interface DriverStat extends BaseStat {
   qualifying: number;
   raceStart: number;
   tireManagement: number;
+  statsSum: number;
 }
