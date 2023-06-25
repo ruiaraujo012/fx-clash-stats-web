@@ -4,10 +4,9 @@ import useBestFrontWing from './useBestFrontWing';
 import useBestGearbox from './useBestGearbox';
 import useBestRearWing from './useBestRearWing';
 import useBestSuspension from './useBestSuspension';
-import type { BaseStat } from '@/types';
-import type { PartStat } from '@/features/parts';
+import type { BestParts, BestPartsSum } from '../types';
 
-const useBestParts = () => {
+const useBestParts = (): BestParts => {
   const bestBrake = useBestBrake();
   const bestGearbox = useBestGearbox();
   const bestRearWing = useBestRearWing();
@@ -15,7 +14,7 @@ const useBestParts = () => {
   const bestSuspension = useBestSuspension();
   const bestEngine = useBestEngine();
 
-  const sum: { [key in keyof Omit<PartStat, keyof BaseStat>]: number } = {
+  const sum: BestPartsSum = {
     cornering:
       bestBrake.stat.cornering +
       bestEngine.stat.cornering +

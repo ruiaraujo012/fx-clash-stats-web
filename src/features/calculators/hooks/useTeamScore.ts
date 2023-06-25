@@ -1,10 +1,9 @@
-import useBestDrivers from './useBestDrivers';
-import useBestParts from './useBestParts';
+import type { BestDrivers, BestParts } from '../types';
 import type { PartStat } from '@/features/parts';
 
-const useTeamScore = () => {
-  const { driver1, driver2, hasTwoDrivers } = useBestDrivers();
-  const { bestBrake, bestEngine, bestFrontWing, bestGearbox, bestRearWing, bestSuspension } = useBestParts();
+const useTeamScore = (driver: BestDrivers, parts: BestParts) => {
+  const { driver1, driver2, hasTwoDrivers } = driver;
+  const { bestBrake, bestEngine, bestFrontWing, bestGearbox, bestRearWing, bestSuspension } = parts;
 
   const calculateStatSumWithoutPitStopTime = (stat: PartStat) =>
     stat.cornering + stat.powerUnit + stat.reliability + stat.reliability;
