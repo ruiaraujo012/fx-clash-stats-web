@@ -1,56 +1,35 @@
-import useBestBrake from './useBestBrake';
-import useBestEngine from './useBestEngine';
-import useBestFrontWing from './useBestFrontWing';
-import useBestGearbox from './useBestGearbox';
-import useBestRearWing from './useBestRearWing';
-import useBestSuspension from './useBestSuspension';
-import type { BestParts, BestPartsSum } from '../types';
+import { useBrakes, useEngines, useFrontWings, useGearboxes, useRearWings, useSuspensions } from '@/features/parts';
+import useBestPart from './useBestPart';
+import useBestPartsStatsSum from './useBestPartsStatsSum';
+import type { BestParts } from '../types';
 
 const useBestParts = (): BestParts => {
-  const bestBrake = useBestBrake();
-  const bestGearbox = useBestGearbox();
-  const bestRearWing = useBestRearWing();
-  const bestFrontWing = useBestFrontWing();
-  const bestSuspension = useBestSuspension();
-  const bestEngine = useBestEngine();
+  const brakes = useBrakes();
+  const bestBrake = useBestPart(brakes, 'brakes');
 
-  const sum: BestPartsSum = {
-    cornering:
-      bestBrake.stat.cornering +
-      bestEngine.stat.cornering +
-      bestFrontWing.stat.cornering +
-      bestGearbox.stat.cornering +
-      bestRearWing.stat.cornering +
-      bestSuspension.stat.cornering,
-    pitStopTime:
-      bestBrake.stat.pitStopTime +
-      bestEngine.stat.pitStopTime +
-      bestFrontWing.stat.pitStopTime +
-      bestGearbox.stat.pitStopTime +
-      bestRearWing.stat.pitStopTime +
-      bestSuspension.stat.pitStopTime,
-    powerUnit:
-      bestBrake.stat.powerUnit +
-      bestEngine.stat.powerUnit +
-      bestFrontWing.stat.powerUnit +
-      bestGearbox.stat.powerUnit +
-      bestRearWing.stat.powerUnit +
-      bestSuspension.stat.powerUnit,
-    reliability:
-      bestBrake.stat.reliability +
-      bestEngine.stat.reliability +
-      bestFrontWing.stat.reliability +
-      bestGearbox.stat.reliability +
-      bestRearWing.stat.reliability +
-      bestSuspension.stat.reliability,
-    speed:
-      bestBrake.stat.speed +
-      bestEngine.stat.speed +
-      bestFrontWing.stat.speed +
-      bestGearbox.stat.speed +
-      bestRearWing.stat.speed +
-      bestSuspension.stat.speed,
-  };
+  const engines = useEngines();
+  const bestEngine = useBestPart(engines, 'engines');
+
+  const frontWings = useFrontWings();
+  const bestFrontWing = useBestPart(frontWings, 'frontWings');
+
+  const gearboxes = useGearboxes();
+  const bestGearbox = useBestPart(gearboxes, 'gearboxes');
+
+  const rearWings = useRearWings();
+  const bestRearWing = useBestPart(rearWings, 'rearWings');
+
+  const suspensions = useSuspensions();
+  const bestSuspension = useBestPart(suspensions, 'suspensions');
+
+  const sum = useBestPartsStatsSum({
+    bestBrake,
+    bestEngine,
+    bestFrontWing,
+    bestGearbox,
+    bestRearWing,
+    bestSuspension,
+  });
 
   return { bestBrake, bestEngine, bestFrontWing, bestGearbox, bestRearWing, bestSuspension, sum };
 };

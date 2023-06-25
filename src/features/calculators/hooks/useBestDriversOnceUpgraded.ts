@@ -1,22 +1,11 @@
 import { useDrivers } from '@/features/drivers';
 import assetUpgradeRequirements from '@/utils/assetUpgradeRequirements';
 import useCollectedAssetsStore from '@/store/collectedAssetsStore';
-import type { AssetUpgradeRequirements } from '@/utils/assetUpgradeRequirements';
-import type { BestDrivers } from '../types';
+import type { BestDrivers, BestPartOnceUpgradedRequirements } from '../types';
 
-interface Requirements {
-  upgradeRequirements?: Pick<AssetUpgradeRequirements, 'coinsNeeded'>;
-}
+type BestDriversOnceUpgradedReturn = BestDrivers & BestPartOnceUpgradedRequirements;
 
-type BestDriversOnceReturn = BestDrivers & Requirements;
-
-/**
- * TODO:
- *
- * Calculate the max level for each asset
- * Calculate the coins needed to upgrade for each asset
- */
-const useBestDriversOnceUpgraded = (): BestDriversOnceReturn => {
+const useBestDriversOnceUpgraded = (): BestDriversOnceUpgradedReturn => {
   const drivers = useDrivers();
   const collectedDrivers = useCollectedAssetsStore((data) => data.drivers);
 
