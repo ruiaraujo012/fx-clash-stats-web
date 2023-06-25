@@ -2,14 +2,18 @@ import { Alert, Heading6, Hr } from '@/components/ui';
 import { BestAssetCard } from '@/components/Asset';
 import { DriverStats } from '@/features/drivers';
 import { useTranslation } from 'react-i18next';
-import useBestDrivers from '../../hooks/useBestDrivers';
+import type { BestDrivers as BestDriversType } from '../../types';
 
-const BestDrivers = () => {
+interface Props {
+  bestDrivers: BestDriversType;
+}
+
+const BestDrivers = (props: Props) => {
+  const { bestDrivers } = props;
+
   const { t } = useTranslation(['calculators']);
 
-  const { hasTwoDrivers, driver1, driver2 } = useBestDrivers();
-
-  if (!hasTwoDrivers) {
+  if (!bestDrivers.hasTwoDrivers) {
     return <Alert severity='warning'>{t('calculators:error.twoDriverRequired')}</Alert>;
   }
 
@@ -18,20 +22,20 @@ const BestDrivers = () => {
       <div className='max-w-sm w-full'>
         <Heading6 className='mb-1'>{t('calculators:driver1')}</Heading6>
 
-        <BestAssetCard asset={driver1.asset}>
+        <BestAssetCard asset={bestDrivers.driver1.asset}>
           <Hr />
 
-          <DriverStats stat={driver1.stat} />
+          <DriverStats stat={bestDrivers.driver1.stat} />
         </BestAssetCard>
       </div>
 
       <div className='max-w-sm w-full'>
         <Heading6 className='mb-1'>{t('calculators:driver2')}</Heading6>
 
-        <BestAssetCard asset={driver2.asset}>
+        <BestAssetCard asset={bestDrivers.driver2.asset}>
           <Hr />
 
-          <DriverStats stat={driver2.stat} />
+          <DriverStats stat={bestDrivers.driver2.stat} />
         </BestAssetCard>
       </div>
     </div>

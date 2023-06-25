@@ -88,7 +88,7 @@ const useCollectedAssetsStore = create<AssetsCollectedStore>()(
           const currentCards = state[assetKey][id]?.cards ?? 0;
           let dataToSave;
 
-          if (level === 0 && currentCards === 0) {
+          if (level === 0) {
             dataToSave = undefined;
           } else {
             dataToSave = {

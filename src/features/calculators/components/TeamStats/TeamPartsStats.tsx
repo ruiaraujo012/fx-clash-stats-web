@@ -1,13 +1,19 @@
 import { useTranslation } from 'react-i18next';
 import TeamStatCard from './TeamStatCard';
-import useBestParts from '../../hooks/useBestParts';
+import type { BestParts as BestPartsType } from '../../types';
 
-const TeamPartsStats = () => {
-  const { t } = useTranslation(['parts']);
+interface Props {
+  bestParts: BestPartsType;
+}
 
+const TeamPartsStats = (props: Props) => {
   const {
-    sum: { cornering, pitStopTime, powerUnit, reliability, speed },
-  } = useBestParts();
+    bestParts: {
+      sum: { cornering, pitStopTime, powerUnit, reliability, speed },
+    },
+  } = props;
+
+  const { t } = useTranslation(['parts']);
 
   return (
     <div className='mb-3'>
