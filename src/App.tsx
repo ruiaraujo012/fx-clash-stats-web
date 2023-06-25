@@ -7,11 +7,9 @@ const App = () => (
   /**
    * Render
    */
-  <div className='bg-white dark:bg-gray-800'>
-    <AppProviders>
-      <AppRoutes />
-    </AppProviders>
-  </div>
+  <AppProviders>
+    <AppRoutes />
+  </AppProviders>
 );
 
 export default App;

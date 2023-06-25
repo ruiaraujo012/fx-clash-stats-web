@@ -1,12 +1,8 @@
 import { useDrivers } from '@/features/drivers';
 import useCollectedAssetsStore from '@/store/collectedAssetsStore';
-import type { BestDriver } from '../types';
+import type { BestDriver, BestDrivers } from '../types';
 
-type BestDriversReturn =
-  | { hasTwoDrivers: true; driver1: BestDriver; driver2: BestDriver }
-  | { hasTwoDrivers: false; driver1: undefined; driver2: undefined };
-
-const useBestDrivers = (): BestDriversReturn => {
+const useBestDrivers = (): BestDrivers => {
   const drivers = useDrivers();
   const collectedDrivers = useCollectedAssetsStore((data) => data.drivers);
 

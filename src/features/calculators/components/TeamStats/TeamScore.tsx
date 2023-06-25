@@ -1,10 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import TeamStatCard from './TeamStatCard';
-import useTeamScore from '../../hooks/useTeamScore';
 
-const TeamScore = () => {
+interface Props {
+  score: string | number;
+}
+
+const TeamScore = (props: Props) => {
+  const { score } = props;
+
   const { t } = useTranslation(['calculators']);
-  const score = useTeamScore();
 
   return (
     <div className='flex flex-row justify-center w-full mb-5'>

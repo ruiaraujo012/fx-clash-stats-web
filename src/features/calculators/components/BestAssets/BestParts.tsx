@@ -4,12 +4,17 @@ import { PartStats } from '@/features/parts';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import BestPartsGrid from './BestPartsGrid';
-import useBestParts from '../../hooks/useBestParts';
+import type { BestParts as BestPartsType } from '../../types';
 
-const BestParts = () => {
+interface Props {
+  bestParts: BestPartsType;
+}
+
+const BestParts = (props: Props) => {
+  const {
+    bestParts: { bestBrake, bestEngine, bestFrontWing, bestGearbox, bestRearWing, bestSuspension },
+  } = props;
   const { t } = useTranslation(['parts']);
-
-  const { bestBrake, bestEngine, bestFrontWing, bestGearbox, bestRearWing, bestSuspension } = useBestParts();
 
   const parts = useMemo(
     () => [
