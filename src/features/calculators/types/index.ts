@@ -1,6 +1,7 @@
 import { Driver, DriverStat } from '@/features/drivers';
 import { Part, PartStat } from '@/features/parts';
 import { BaseStat } from '@/types';
+import { AssetUpgradeRequirements } from '@/utils/assetUpgradeRequirements';
 
 export interface BestPart {
   asset: Part;
@@ -30,4 +31,8 @@ export interface BestParts {
   bestRearWing: BestPart;
   bestSuspension: BestPart;
   sum: BestPartsSum;
+}
+
+export interface BestPartOnceUpgradedRequirements {
+  upgradeRequirements?: Pick<AssetUpgradeRequirements, 'coinsNeeded'>;
 }
