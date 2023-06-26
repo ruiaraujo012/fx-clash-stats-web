@@ -83,8 +83,8 @@ const calculateDriverWeightedScore = (
 const calculateDriverUpgrade = (driver: Driver, stat: Stat): Upgrade => ({
   cards: CARDS_NEEDED[stat.level - 1],
   coins:
-    RARITY_COINS_COST[driver.rarity][stat.level - 1] +
-    RARITY_COINS_COST[driver.rarity][stat.level - 1] * (driver.series - 1) * 0.1,
+    RARITY_COINS_COST[driver.rarity][driver.series - 1][stat.level - 1] +
+    RARITY_COINS_COST[driver.rarity][driver.series - 1][stat.level - 1] * (driver.series - 1) * 0.1,
 });
 
 const calculateStatsSum = (stat: Stat): number =>
