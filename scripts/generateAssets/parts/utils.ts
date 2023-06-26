@@ -15,8 +15,8 @@ const calculatePartUpgrade = (part: Part, stat: Stat): Upgrade => {
   return {
     cards: CARDS_NEEDED[stat.level - 1],
     coins:
-      RARITY_COINS_COST[part.rarity][stat.level - 1] +
-      RARITY_COINS_COST[part.rarity][stat.level - 1] * (part.series - 1) * 0.1,
+      RARITY_COINS_COST[part.rarity][part.series - 1][stat.level - 1] +
+      RARITY_COINS_COST[part.rarity][part.series - 1][stat.level - 1] * (part.series - 1) * 0.1,
   };
 };
 
