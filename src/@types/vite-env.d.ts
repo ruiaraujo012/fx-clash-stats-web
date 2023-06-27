@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly VITE_I18NEXT_DEBUG: 'true' | 'false';
+  readonly VITE_BASE_URL: string;
 }
 
 interface ImportMeta {
