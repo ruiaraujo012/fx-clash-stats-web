@@ -1,9 +1,9 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 
 import commonRoutes from '@/routes/commonRoutes';
 
 const AppRoutes = () => {
-  const router = createBrowserRouter([...commonRoutes]);
+  const router = createHashRouter([...commonRoutes]);
 
   return <RouterProvider router={router} />;
 };

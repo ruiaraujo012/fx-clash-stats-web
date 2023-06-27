@@ -1,7 +1,9 @@
 {
   "name": "fx-clash-stats",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
+  "repository": "github:ruiaraujo012/fx-clash-stats-web",
+  "homepage": "https://ruiaraujo012.github.io/fx-clash-stats-web/#",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +11,9 @@
     "build:dev": "tsc && vite build --mode development",
     "build:prod": "tsc && vite build",
     "preview": "vite preview",
-    "generate-assets": "ts-node scripts/generateAssets/index.ts"
+    "generate-assets": "ts-node scripts/generateAssets/index.ts",
+    "semantic-release": "semantic-release",
+    "deploy:gh-pages": "gh-pages -d build"
   },
   "dependencies": {
     "fuse.js": "^6.6.2",
@@ -24,6 +28,8 @@
     "zustand": "^4.3.8"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@types/lodash.clonedeep": "^4.5.7",
     "@types/lodash.set": "^4.3.7",
     "@types/node": "^20.2.5",
@@ -32,9 +38,11 @@
     "@vitejs/plugin-react-swc": "^3.3.2",
     "autoprefixer": "^10.4.14",
     "eslint-config-ruiaraujo-react": "^3.1.2",
+    "gh-pages": "^5.0.0",
     "lodash.clonedeep": "^4.5.0",
     "lodash.set": "^4.3.2",
     "postcss": "^8.4.23",
+    "semantic-release": "^21.0.5",
     "simple-zustand-devtools": "^1.1.0",
     "tailwindcss": "^3.3.1",
     "ts-node": "^10.9.1",
