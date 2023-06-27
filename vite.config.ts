@@ -1,3 +1,4 @@
+import { VitePWA } from 'vite-plugin-pwa';
 import { checker } from 'vite-plugin-checker';
 import { defineConfig, loadEnv } from 'vite';
 import eslint from 'vite-plugin-eslint';
@@ -58,6 +59,14 @@ export default defineConfig(({ mode }) => {
         apply: 'serve',
         enforce: 'post',
       },
+      VitePWA({
+        manifest: {
+          display: 'fullscreen',
+          orientation: 'portrait-primary',
+          prefer_related_applications: true,
+        },
+        registerType: 'autoUpdate',
+      }),
     ],
     resolve: {
       alias: [

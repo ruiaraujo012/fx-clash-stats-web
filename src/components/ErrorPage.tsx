@@ -10,7 +10,7 @@ const ErrorPage = () => {
     <>
       <NavBar />
 
-      <div className='p-5'>
+      <div className='mt-16 p-3 flex-1'>
         <h1 className='text-4xl font-extrabold dark:text-white'>Oops...</h1>
 
         <p className='my-4 text-lg text-gray-500'>

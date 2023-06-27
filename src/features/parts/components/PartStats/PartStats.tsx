@@ -57,7 +57,7 @@ const PartStats = (props: Props) => {
             className='text-center'
             term={t('parts:pitStopTime')}
           >
-            {stat.pitStopTime}
+            {stat.pitStopTime.toFixed(2)}
           </DefinitionItem>
         </div>
       </div>

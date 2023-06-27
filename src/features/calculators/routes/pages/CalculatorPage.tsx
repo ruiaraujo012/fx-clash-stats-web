@@ -1,4 +1,4 @@
-import { BestTeam, BestTeamOnceUpgraded } from '../../components/BestTeam';
+import { BestTeam, BestTeamOnceUpgraded } from '../../components';
 import { Hr } from '@/components/ui';
 
 const CalculatorPage = () => (
