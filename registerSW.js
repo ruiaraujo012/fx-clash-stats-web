@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/fx-clash-stats-web/sw.js', { scope: '/fx-clash-stats-web/' })})}
