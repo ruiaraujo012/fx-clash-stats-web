@@ -1,3 +1,46 @@
+# [1.1.0](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.0...v1.1.0) (2023-06-28)
+
+
+### Bug Fixes
+
+* **navbar:** add fixed navbar ([9464bd2](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/9464bd206e94ecdf6e5eecd746e48e4111b501a4))
+* **calculators:** fix missing container on best team once upgraded ([9eacb1a](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/9eacb1ae07118baefdf97dcc9fbbf0361a7ca3ea))
+* **calculators:** fix team score calculation ([3f1597d](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/3f1597d9ad5d286174290d389825175b97098e55))
+* **assets:** fix the coins upgrade requirements ([4ab3e21](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/4ab3e21c79d3365e508e2dfe3b64bdfad3b9619e)), closes [#28](https://github.com/ruiaraujo012/fx-clash-stats-web/issues/28)
+* **fixes:** fixes ([1eef4b1](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/1eef4b19ca54672154c37b15cb7850cf98fa1ee2))
+* **fixes:** some fixes ([4225fdb](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/4225fdb66158969f8f49b64681dd71995ae3990a))
+* **layout:** some layout fixes ([fde97e8](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/fde97e8007bc5266ff814a0a7577cbbefd7553d8))
+
+
+### Features
+
+* **calculators:** add a page to calculate the best team possible ([bb7c184](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/bb7c1846800b9fd5c79f07fd250da9120208d064)), closes [#19](https://github.com/ruiaraujo012/fx-clash-stats-web/issues/19)
+* **assets:** add assets card actions ([b33c75e](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/b33c75ee221c6cf9946b515e17cdf729ccf56af8))
+* **calculator:** add best parts calculator ([083a463](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/083a4632c6a48a7908471a952790244f5855eea5))
+* **calculators:** add best team possible ([bda3d93](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/bda3d938b7bb76332e8991aa25bfd7e84e9bca79)), closes [#19](https://github.com/ruiaraujo012/fx-clash-stats-web/issues/19)
+* **calculators:** add beste drivers once upgraded ([d175b38](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/d175b3884a53bb6dfc2b35d06c64eab9596c7201)), closes [#19](https://github.com/ruiaraujo012/fx-clash-stats-web/issues/19)
+* **parts:** add brakes hook and display brakes in cards ([34a4a67](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/34a4a67eca7df551e4860d61473996060fdba967))
+* **ci:** add ci ([682cd67](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/682cd67ec395346f2a702b10b7c26200dc5d1000)), closes [#3](https://github.com/ruiaraujo012/fx-clash-stats-web/issues/3)
+* **store:** add collected assets store ([307ccdb](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/307ccdbdcf662104b7492f09c74a85c0c6781050))
+* **app-layout:** add desktop sidebar ([f957555](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/f957555c8fd11f8984a7f9f17eea6487be5ad6b4))
+* **drivers:** add drivers list page ([fe4e7f0](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/fe4e7f0fa0f09bd980da2c7a9da8573a82665c40)), closes [#24](https://github.com/ruiaraujo012/fx-clash-stats-web/issues/24)
+* **parts:** add front wings list page ([0d22205](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/0d2220527dfb216355ff6484fbd46900252d111a))
+* **parts:** add gearboxes list page ([0345a42](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/0345a4206e917b2d598beee0662be5f5e540c0a2))
+* **ui:** add heading components ([aaf74f8](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/aaf74f8010e03cbbad58a79a3e4a9e656529648b))
+* **i18n:** add i18n with i18next ([50b7f93](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/50b7f9394c09cb0f09accaf26dbc5460eea78b13))
+* **sidebar:** add mobile sidebar ([a428a4f](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/a428a4f62b6a90f0f4588b3a243c7d5331211969)), closes [#20](https://github.com/ruiaraujo012/fx-clash-stats-web/issues/20)
+* **assets:** add option to click on card asset name to open asset details ([09d3991](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/09d3991d45fbd4a7a555c593046c958259bd3248))
+* **calculators:** add parts stats sum to best team ([5c0effa](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/5c0effabba8b5da9dcb5f8ce45e68c3724f954ff))
+* **parts:** add rear wings list page ([47178de](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/47178ded9c26e94d231c113f2cecd93f96a40772))
+* **scripts:** add script to create all parts ([b9963fc](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/b9963fc2396e60d871994b2414b57a0f3228b8fd))
+* **scripts:** add scripts to create brakes data ([410094e](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/410094e40887ca489c3add8cc4ce948b1b908fde))
+* **scripts:** add scripts to create initial drivers and parts data ([dceed0f](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/dceed0f8b90fdcb30bfef040709eea08e25f36d9))
+* **assets:** add search assets ([19c7e0e](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/19c7e0ef450f7408766d433948164dd5837ff6fa))
+* **parts:** add suspensions and engines list page ([9204251](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/9204251a811004864d8583df1c41edfdf429a32d))
+* **brakes:** add upgrade requirements component to asset card ([e34b21b](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/e34b21b8552c80e8c0e35be00eb828353cdd7625))
+* **store:** improve collected assets store methods ([cf20049](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/cf200491c7ea0a2b1a407ea5cabacb7dcbbeac63))
+* **theme:** refactor theme switcher and add github button ([e5da783](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/e5da7831c67eb5964046177b1dfdc0d4a36fc4e5))
+
 # 1.0.0 (2023-06-27)
 
 ### Bug Fixes
