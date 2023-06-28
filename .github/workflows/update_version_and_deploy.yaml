@@ -5,16 +5,16 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
+  contents: read # for checkout
 
 jobs:
   release-deploy:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
-      issues: write
-      pull-requests: write
+      contents: write # to be able to publish a GitHub release       
+      issues: write # to be able to comment on released issues       
+      pull-requests: write # to be able to comment on released pull requests
 
     strategy:
       matrix:
@@ -37,7 +37,7 @@ jobs:
 
       - run: pnpm semantic-release
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: pnpm build
 
