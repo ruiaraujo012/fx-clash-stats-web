@@ -47,14 +47,3 @@ export const resources = {
  */
 export type TLanguagesKeys = keyof typeof LANGUAGES;
 export type TLanguagesValues = (typeof LANGUAGES)[TLanguagesKeys];
-
-/**
- * Functions
- */
-
-/**
- * normalizeKey
- * @param key the key to be normalized and work in `t`
- * @returns the normalized key
- */
-export const normalizeKey = (key: string) => key as unknown as TemplateStringsArray;

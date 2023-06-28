@@ -1,4 +1,4 @@
-import i18next from '@/i18n/i18next';
+import i18next from 'i18next';
 
 /**
  * formatLongNumbers
