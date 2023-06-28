@@ -1,9 +1,8 @@
 import { twMerge } from 'tailwind-merge';
-import type { TFunctionDetailedResult } from 'i18next';
 
 interface Props {
   className?: string;
-  children: string | number | TFunctionDetailedResult;
+  children: string | number;
 }
 
 const Heading1 = (props: Props) => {
