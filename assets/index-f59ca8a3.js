@@ -1,0 +1,1 @@
+import{u as t,j as e}from"./vendor-71757edf.js";import{A as i}from"./AssetListPage-72c90840.js";import{u as o}from"./useDrivers-b1049fb3.js";import"./formatting-f3b3ba99.js";import"./index-72cb1d53.js";const a=()=>{const s=o(),{t:r}=t(["drivers"]);return e.jsx(i,{assetKey:"drivers",assets:s,title:r("drivers:driver",{count:2})})},c=a;export{c as DriversListPage};
