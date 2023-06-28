@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.0...v1.0.1) (2023-06-28)
+
+
+### Bug Fixes
+
+* **ci:** fix workflow missing GH_TOKEN ([b123d97](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/b123d9792852ddae43ed7c125c6f33e1e08d8f82))
+
 # 1.0.0 (2023-06-28)
 
 

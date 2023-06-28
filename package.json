@@ -1,7 +1,7 @@
 {
   "name": "fx-clash-stats",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "github:ruiaraujo012/fx-clash-stats-web",
   "homepage": "https://ruiaraujo012.github.io/fx-clash-stats-web/#",
   "type": "module",
