@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.1...v1.0.2) (2023-06-28)
+
+
+### Bug Fixes
+
+* **fixes:** some fixes ([fe8ff13](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/fe8ff13934d9bc5feddbf9e9c0da7a78995d73fc))
+* update update_version_and_deploy.yaml ([3bb0e42](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/3bb0e424770b775af0af8d11364e96ca5713dce4))
+
 ## [1.0.1](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.0...v1.0.1) (2023-06-28)
 
 
