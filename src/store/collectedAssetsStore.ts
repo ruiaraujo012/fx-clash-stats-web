@@ -5,8 +5,10 @@ import {
 } from '@/features/drivers';
 import { create } from 'zustand';
 import { createPartsCollectedSlice } from '@/features/parts';
+import { immer } from 'zustand/middleware/immer';
 import { mountStoreDevtool } from 'simple-zustand-devtools';
 import { persist } from 'zustand/middleware';
+
 import type { PartsCollectedDataSlice, PartsCollectedKeys } from '@/features/parts';
 
 export type CollectedAssetsKeys = PartsCollectedKeys | DriversCollectedKeys;
@@ -24,7 +26,7 @@ export type AssetsCollectedStore = AssetsCollectedState & AssetsCollectedActions
 
 const useCollectedAssetsStore = create<AssetsCollectedStore>()(
   persist(
-    (...args) => ({
+    immer((...args) => ({
       ...createPartsCollectedSlice(...args),
       ...createDriversCollectedSlice(...args),
       decreaseCollectedAssetCards: (assetKey, id) => {
@@ -33,15 +35,9 @@ const useCollectedAssetsStore = create<AssetsCollectedStore>()(
         return set((state) => {
           const currentCollectedCards = state[assetKey][id]?.cards ?? 0;
 
-          return {
-            [assetKey]: {
-              ...state[assetKey],
-              [id]: {
-                ...state[assetKey][id],
-                cards: currentCollectedCards > 0 ? currentCollectedCards - 1 : currentCollectedCards,
-              },
-            },
-          };
+          if (currentCollectedCards > 0) state[assetKey][id].cards = currentCollectedCards - 1;
+
+          return state;
         });
       },
       increaseCollectedAssetCards: (assetKey, id) => {
@@ -51,16 +47,13 @@ const useCollectedAssetsStore = create<AssetsCollectedStore>()(
           const currentCollectedCards = state[assetKey][id]?.cards ?? 0;
           const currentLevel = state[assetKey][id]?.level ?? 0;
 
-          return {
-            [assetKey]: {
-              ...state[assetKey],
-              [id]: {
-                ...state[assetKey][id],
-                cards: currentCollectedCards + 1,
-                level: currentLevel === 0 ? 1 : currentLevel,
-              },
-            },
+          state[assetKey][id] = {
+            ...state[assetKey][id],
+            cards: currentCollectedCards + 1,
+            level: currentLevel === 0 ? 1 : currentLevel,
           };
+
+          return state;
         });
       },
       updateCollectedAssetCards: (assetKey, id, cards) => {
@@ -69,16 +62,13 @@ const useCollectedAssetsStore = create<AssetsCollectedStore>()(
         return set((state) => {
           const currentLevel = state[assetKey][id]?.level ?? 0;
 
-          return {
-            [assetKey]: {
-              ...state[assetKey],
-              [id]: {
-                ...state[assetKey][id],
-                cards,
-                level: currentLevel === 0 && cards > 0 ? 1 : currentLevel,
-              },
-            },
+          state[assetKey][id] = {
+            ...state[assetKey][id],
+            cards,
+            level: currentLevel === 0 && cards > 0 ? 1 : currentLevel,
           };
+
+          return state;
         });
       },
       updateCollectedAssetLevel: (assetKey, id, level) => {
@@ -86,27 +76,21 @@ const useCollectedAssetsStore = create<AssetsCollectedStore>()(
 
         return set((state) => {
           const currentCards = state[assetKey][id]?.cards ?? 0;
-          let dataToSave;
 
           if (level === 0) {
-            dataToSave = undefined;
+            delete state[assetKey][id];
           } else {
-            dataToSave = {
+            state[assetKey][id] = {
               ...state[assetKey][id],
-              cards: level === 0 ? 0 : currentCards,
+              cards: currentCards,
               level,
             };
           }
 
-          return {
-            [assetKey]: {
-              ...state[assetKey],
-              [id]: dataToSave,
-            },
-          };
+          return state;
         });
       },
-    }),
+    })),
     {
       name: 'fxcs-assets-collected-store-storage',
     },
