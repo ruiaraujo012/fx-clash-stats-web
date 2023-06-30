@@ -1,6 +1,7 @@
 import { VitePWA } from 'vite-plugin-pwa';
 import { checker } from 'vite-plugin-checker';
 import { defineConfig, loadEnv } from 'vite';
+import { sentryVitePlugin } from '@sentry/vite-plugin';
 import eslint from 'vite-plugin-eslint';
 import path from 'path';
 import react from '@vitejs/plugin-react-swc';
@@ -26,7 +27,7 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
-      sourcemap: false,
+      sourcemap: true,
     },
     define: {
       APP_ENVIRONMENT: JSON.stringify(mode),
@@ -66,6 +67,14 @@ export default defineConfig(({ mode }) => {
           prefer_related_applications: true,
         },
         registerType: 'autoUpdate',
+      }),
+      // Put the Sentry vite plugin after all other plugins
+      sentryVitePlugin({
+        // Auth tokens can be obtained from https://sentry.io/settings/account/api/auth-tokens/
+        // and need `project:releases` and `org:read` scopes
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+        org: 'personal-zc9',
+        project: 'fx-clash-stats-web',
       }),
     ],
     resolve: {
