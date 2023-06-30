@@ -1,10 +1,15 @@
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
+
+import * as Sentry from '@sentry/react';
+
 import NavBar from '@/layouts/appLayout/NavBar';
 
 const ErrorPage = () => {
   const error = useRouteError();
 
   console.log('error >> ', error);
+
+  Sentry.captureException(error);
 
   return (
     <>

@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@sentry/react':
+    specifier: ^7.57.0
+    version: 7.57.0(react@18.2.0)
   fuse.js:
     specifier: ^6.6.2
     version: 6.6.2
@@ -2336,6 +2339,73 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@sentry-internal/tracing@7.57.0:
+    resolution: {integrity: sha512-tpViyDd8AhQGYYhI94xi2aaDopXOPfL2Apwrtb3qirWkomIQ2K86W1mPmkce+B0cFOnW2Dxv/ZTFKz6ghjK75A==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/core': 7.57.0
+      '@sentry/types': 7.57.0
+      '@sentry/utils': 7.57.0
+      tslib: 2.6.0
+    dev: false
+
+  /@sentry/browser@7.57.0:
+    resolution: {integrity: sha512-E0HaYYlaqHFiIRZXxcvOO8Odvlt+TR1vFFXzqUWXPOvDRxURglTOCQ3EN/u6bxtAGJ6y/Zc2obgihTtypuel/w==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry-internal/tracing': 7.57.0
+      '@sentry/core': 7.57.0
+      '@sentry/replay': 7.57.0
+      '@sentry/types': 7.57.0
+      '@sentry/utils': 7.57.0
+      tslib: 2.6.0
+    dev: false
+
+  /@sentry/core@7.57.0:
+    resolution: {integrity: sha512-l014NudPH0vQlzybtXajPxYFfs9w762NoarjObC3gu76D1jzBBFzhdRelkGpDbSLNTIsKhEDDRpgAjBWJ9icfw==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/types': 7.57.0
+      '@sentry/utils': 7.57.0
+      tslib: 2.6.0
+    dev: false
+
+  /@sentry/react@7.57.0(react@18.2.0):
+    resolution: {integrity: sha512-XGNTjIoCG3naSmCU8qObd+y+CqAB6NQkGWOp2yyBwp2inyKF2ehJvDh6bIQloBYq2TmOJDa4NfXdMrkilxaLFQ==}
+    engines: {node: '>=8'}
+    peerDependencies:
+      react: 15.x || 16.x || 17.x || 18.x
+    dependencies:
+      '@sentry/browser': 7.57.0
+      '@sentry/types': 7.57.0
+      '@sentry/utils': 7.57.0
+      hoist-non-react-statics: 3.3.2
+      react: 18.2.0
+      tslib: 2.6.0
+    dev: false
+
+  /@sentry/replay@7.57.0:
+    resolution: {integrity: sha512-pN4ryNS3J5EYbkXvR+O/+hseAJha7XDl8mPFtK0OGTHG10JzCi4tQJazblHQdpb5QBaMMPCeZ+isyfoQLDNXnw==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@sentry/core': 7.57.0
+      '@sentry/types': 7.57.0
+      '@sentry/utils': 7.57.0
+    dev: false
+
+  /@sentry/types@7.57.0:
+    resolution: {integrity: sha512-D7ifoUfxuVCUyktIr5Gc+jXUbtcUMmfHdTtTbf1XCZHua5mJceK9wtl3YCg3eq/HK2Ppd52BKnTzEcS5ZKQM+w==}
+    engines: {node: '>=8'}
+    dev: false
+
+  /@sentry/utils@7.57.0:
+    resolution: {integrity: sha512-YXrkMCiNklqkXctn4mKYkrzNCf/dfVcRUQrkXjeBC+PHXbcpPyaJgInNvztR7Skl8lE3JPGPN4v5XhLxK1bUUg==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/types': 7.57.0
+      tslib: 2.6.0
+    dev: false
 
   /@surma/rollup-plugin-off-main-thread@2.2.3:
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
@@ -4687,6 +4757,12 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
+
+  /hoist-non-react-statics@3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+    dependencies:
+      react-is: 16.13.1
+    dev: false
 
   /hook-std@3.0.0:
     resolution: {integrity: sha512-jHRQzjSDzMtFy34AGj1DN+vq54WVuhSvKgrHf0OMiFQTwDD4L/qqofVEWjLOBMTn5+lCD3fPg32W9yOfnEJTTw==}
@@ -7083,7 +7159,6 @@ packages:
 
   /tslib@2.6.0:
     resolution: {integrity: sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA==}
-    dev: true
 
   /tsutils@3.21.0(typescript@5.1.5):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
