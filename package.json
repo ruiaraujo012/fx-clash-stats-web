@@ -16,6 +16,7 @@
     "deploy:gh-pages": "gh-pages -d build"
   },
   "dependencies": {
+    "@sentry/react": "^7.57.0",
     "fuse.js": "^6.6.2",
     "i18next": "^23.2.3",
     "i18next-browser-languagedetector": "^7.1.0",
