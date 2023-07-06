@@ -1,8 +1,9 @@
 import { Card } from '@/components/ui';
 import DefinitionItem from '@/components/DefinitionItem';
+import type { ReactNode } from 'react';
 
 interface Props {
-  children: string | number;
+  children: string | number | ReactNode;
   title: string;
 }
 

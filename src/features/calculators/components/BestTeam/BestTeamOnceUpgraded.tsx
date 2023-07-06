@@ -1,6 +1,6 @@
 import { BestDrivers, BestParts } from '../BestAssets';
 import { Heading3 } from '@/components/ui';
-import { TeamPartsStats } from '../TeamStats';
+import { TeamPartsStats, TeamScore } from '../TeamStats';
 import { formatLongNumber } from '@/utils/formatting';
 import { useTranslation } from 'react-i18next';
 import TeamStatCard from '../TeamStats/TeamStatCard';
@@ -25,7 +25,7 @@ const BestTeamOnceUpgraded = () => {
       <Heading3>{t('calculators:bestTeamOnceUpgraded')}</Heading3>
 
       <div className='flex flex-row justify-center w-full mb-5 gap-5'>
-        <TeamStatCard title={t('calculators:teamScore')}>{score}</TeamStatCard>
+        <TeamScore score={score} />
         <TeamStatCard title={t('calculators:coinsNeeded')}>{formatLongNumber(coinsNeeded)}</TeamStatCard>
       </div>
 
