@@ -1,0 +1,1 @@
+{"version":3,"file":"useDrivers-3b5ac465.js","sources":["../../src/features/drivers/hooks/useDrivers.ts"],"sourcesContent":["import drivers from '../constants/drivers.json';\nimport type { Driver } from '../types';\n\nconst useDrivers = (): Driver[] => drivers as Driver[];\n\nexport default useDrivers;\n"],"names":["useDrivers","drivers"],"mappings":"648GAGAA,EAAA,IAAAC"}
