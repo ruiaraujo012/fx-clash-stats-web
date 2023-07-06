@@ -1,14 +1,21 @@
+import { Alert, Container, Hr } from '@/components/ui';
 import { BestTeam, BestTeamOnceUpgraded } from '../../components';
-import { Container, Hr } from '@/components/ui';
+import { useTranslation } from 'react-i18next';
 
-const CalculatorPage = () => (
-  <Container maxWidth='2xl'>
-    <BestTeam />
+const CalculatorPage = () => {
+  const { t } = useTranslation(['calculators']);
 
-    <Hr className='my-10' />
+  return (
+    <Container maxWidth='2xl'>
+      <Alert severity='warning'>{t('calculators:error.teamScoreProblem')}</Alert>
 
-    <BestTeamOnceUpgraded />
-  </Container>
-);
+      <BestTeam />
+
+      <Hr className='my-10' />
+
+      <BestTeamOnceUpgraded />
+    </Container>
+  );
+};
 
 export default CalculatorPage;

@@ -18,7 +18,9 @@ const BestTeam = () => {
     <Container maxWidth='2xl'>
       <Heading3>{t('calculators:bestTeam')}</Heading3>
 
-      <TeamScore score={score} />
+      <div className='flex flex-row justify-center w-full mb-5'>
+        <TeamScore score={score} />
+      </div>
 
       <BestDrivers bestDrivers={bestDrivers} />
 

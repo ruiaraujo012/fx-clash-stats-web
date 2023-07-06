@@ -26,6 +26,7 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^13.0.1",
     "react-router-dom": "^6.14.0",
+    "react-tooltip": "^5.18.0",
     "tailwind-merge": "^1.13.2",
     "zustand": "^4.3.8"
   },
