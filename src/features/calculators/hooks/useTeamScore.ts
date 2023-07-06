@@ -24,13 +24,6 @@ const useTeamScore = (driver: BestDrivers, parts: BestParts) => {
     calculateStatSumWithoutPitStopTime(bestRearWing.stat) +
     calculateStatSumWithoutPitStopTime(bestSuspension.stat);
 
-  const pitStopTimeDiffToWorst = 6 - pitStopTimeSum;
-  const pitStopTimeMinusDiffToWorst = pitStopTimeSum - pitStopTimeDiffToWorst;
-
-  console.log('pitStopTimeSum >> ', pitStopTimeSum);
-  console.log('pitStopTimeDiffToWorst >> ', pitStopTimeDiffToWorst);
-  console.log('pitStopTimeMinusDiffToWorst >> ', pitStopTimeMinusDiffToWorst);
-
   // FIXME: Find the right values for the linear functions (those work well but not perfectly)
   // eslint-disable-next-line id-length
   const a = -46.28510327;
@@ -38,7 +31,7 @@ const useTeamScore = (driver: BestDrivers, parts: BestParts) => {
   const b = 283.2476075;
 
   // f(x) = a*x + b
-  const pitStopTimeValue = a * pitStopTimeDiffToWorst + b;
+  const pitStopTimeValue = a * pitStopTimeSum + b;
 
   teamScore += pitStopTimeValue;
 
