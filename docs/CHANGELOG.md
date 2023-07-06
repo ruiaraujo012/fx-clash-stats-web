@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.2...v1.0.3) (2023-07-06)
+
+
+### Bug Fixes
+
+* **calculators:** fix the calculator page crash after changing a asset level ([9bb16d7](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/9bb16d7be9c974a3b0edf6b869006a602168fb89)), closes [#40](https://github.com/ruiaraujo012/fx-clash-stats-web/issues/40)
+* **calculators:** fix the team score calculation ([3daa8f3](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/3daa8f33044f2dda6284c636219fbb0bca7b0da2)), closes [#39](https://github.com/ruiaraujo012/fx-clash-stats-web/issues/39)
+* **deps:** upgrade i18next to v23 ([7475f0f](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/7475f0f6aad7381640ff5dc0a03bc811890d50d6))
+
 ## [1.0.2](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.1...v1.0.2) (2023-06-28)
 
 
