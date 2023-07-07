@@ -5,7 +5,6 @@
   "driver1": "Driver 1",
   "driver2": "Driver 2",
   "error": {
-    "teamScoreProblem": "There's a problem with the formula to calculate the team score. With that, the value shown could be different from the game.",
     "twoDriverRequired": "You must have at least two drivers for the calculator to work."
   },
   "teamScore": "Team score"

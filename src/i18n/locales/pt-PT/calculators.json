@@ -5,7 +5,6 @@
   "driver1": "Piloto 1",
   "driver2": "Piloto 2",
   "error": {
-    "teamScoreProblem": "Há um problema com a fórmula para calcular a pontuação da equipa. Com isso, o valor mostrado pode ser diferente do jogo.",
     "twoDriverRequired": "Deve ter pelo menos dois pilotos para que a calculadora funcione."
   },
   "teamScore": "Pontuação da equipa"

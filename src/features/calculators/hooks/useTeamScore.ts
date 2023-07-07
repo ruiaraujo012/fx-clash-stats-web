@@ -26,9 +26,9 @@ const useTeamScore = (driver: BestDrivers, parts: BestParts) => {
 
   // FIXME: Find the right values for the linear functions (those work well but not perfectly)
   // eslint-disable-next-line id-length
-  const a = -46.28510327;
+  const a = -45.9;
   // eslint-disable-next-line id-length
-  const b = 283.2476075;
+  const b = 281;
 
   // f(x) = a*x + b
   const pitStopTimeValue = a * pitStopTimeSum + b;
