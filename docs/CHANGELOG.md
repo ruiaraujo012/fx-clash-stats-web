@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.5...v1.0.6) (2023-07-08)
+
+
+### Bug Fixes
+
+* **lazy-loading:** fix a bug that make pages crash ([b5c0047](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/b5c004739312c394da96e0942191d5d29b984474))
+
 ## [1.0.5](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.4...v1.0.5) (2023-07-07)
 
 
