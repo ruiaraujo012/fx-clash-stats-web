@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.6...v1.0.7) (2023-07-08)
+
+
+### Bug Fixes
+
+* **error-page:** fix error page handler ([5c62546](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/5c625462f20f2e864d284a1db7b4567e931ddfa5))
+
 ## [1.0.6](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.5...v1.0.6) (2023-07-08)
 
 
