@@ -9,6 +9,10 @@ const ErrorPage = () => {
 
   console.log('error >> ', error);
 
+  if ((error as TypeError).message.includes('Failed to fetch dynamically imported module')) {
+    window.location.reload();
+  }
+
   Sentry.captureException(error);
 
   return (
