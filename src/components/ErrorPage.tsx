@@ -11,9 +11,9 @@ const ErrorPage = () => {
 
   if ((error as TypeError).message.includes('Failed to fetch dynamically imported module')) {
     window.location.reload();
+  } else {
+    Sentry.captureException(error);
   }
-
-  Sentry.captureException(error);
 
   return (
     <>
