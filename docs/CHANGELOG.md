@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.7...v1.0.8) (2023-09-04)
+
+
+### Bug Fixes
+
+* **upgrades:** fix upgrades cost ([3a6fef4](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/3a6fef4437bc8008907866ff0953f0baf47645db))
+
 ## [1.0.7](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.6...v1.0.7) (2023-07-08)
 
 
