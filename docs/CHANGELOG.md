@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.8...v1.0.9) (2023-09-08)
+
+
+### Bug Fixes
+
+* **ci:** update update_version_and_deploy.yaml ci pipeline ([8016f39](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/8016f39b55539e173b8cc1aab77b18c2971edc37))
+
 ## [1.0.8](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.7...v1.0.8) (2023-09-04)
 
 
