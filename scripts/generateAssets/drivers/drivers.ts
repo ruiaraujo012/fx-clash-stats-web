@@ -2353,7 +2353,7 @@ const DRIVERS: Driver[] = [
         defending: 55,
         qualifying: 59,
         raceStart: 49,
-        tireManagement: 69,
+        tireManagement: 60,
       },
       {
         level: 7,
