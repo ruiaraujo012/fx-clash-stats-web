@@ -35,6 +35,8 @@ jobs:
             - recursive: true
               args: [--frozen-lockfile]
 
+      - run: pnpm generate-assets
+
       - run: pnpm semantic-release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
