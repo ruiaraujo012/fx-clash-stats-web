@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.9...v1.0.10) (2023-09-08)
+
+
+### Bug Fixes
+
+* **typos:** update driver stats ([ac0f116](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/ac0f1167767d3f2a6a78b6fe6fd3813fc983d0f5))
+
 ## [1.0.9](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.8...v1.0.9) (2023-09-08)
 
 
