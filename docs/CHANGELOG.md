@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.10...v1.0.11) (2023-09-25)
+
+
+### Bug Fixes
+
+* **lazy-import:** fix lazy import error ([1c79437](https://github.com/ruiaraujo012/fx-clash-stats-web/commit/1c7943776f001af3e3e50732136c02ae0ba4f7f1))
+
 ## [1.0.10](https://github.com/ruiaraujo012/fx-clash-stats-web/compare/v1.0.9...v1.0.10) (2023-09-08)
 
 
