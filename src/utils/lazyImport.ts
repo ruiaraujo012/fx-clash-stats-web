@@ -6,7 +6,15 @@ export function lazyImport<T extends ComponentType<unknown>, I extends { [K2 in 
   name: K,
 ): I {
   return Object.create({
-    [name]: lazy(() => factory().then((module) => ({ default: module[name] }))),
+    [name]: lazy(() =>
+      factory()
+        .then((module) => ({ default: module[name] }))
+        .catch((e) => {
+          window.location.reload();
+
+          return e;
+        }),
+    ),
   });
 }
 
